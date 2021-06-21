@@ -21,3 +21,6 @@ a {
 .navbar-inner a {
   text-decoration: none;
 }
+.xl p {
+  font-weight: 600;
+}
