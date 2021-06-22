@@ -150,15 +150,12 @@ a:hover { color: #666666; }
 .nav_q18zpjkkx { background-color: transparent; }
 .nav_q18zpjkkx .navbar-inner .logo a { color: #1e202b; }
 .nav_q18zpjkkx .navbar-inner .logo a { font-size: 1.1111111111111112rem; }
-.nav_q18zpjkkx .navbar-inner .hamburger a.menu-icon span { background-color: #000000; }
-.nav_q18zpjkkx .navbar-inner .hamburger a.menu-icon { width: 24; background-color: red; }
-.nav_q18zpjkkx .navbar-inner .hamburger a.menu-icon span { height: 2px; }
+.nav_q18zpjkkx .navbar-inner .hamburger a.menu-icon span { background-color: #000000; margin-top: 7px; height: 2px;}
+.nav_q18zpjkkx .navbar-inner .hamburger a.menu-icon { height: 14px; width: 24px; background-color: red; }
 .nav_q18zpjkkx .navbar-inner .hamburger a.open-menu span::before { transform: translateY(-6px); }
 .nav_q18zpjkkx .navbar-inner .hamburger a.open-menu span::after { transform: translateY(6px); }
 .nav_q18zpjkkx .navbar-inner .hamburger a.open-menu:hover span::before { transform: translateY(-8px); }
 .nav_q18zpjkkx .navbar-inner .hamburger a.open-menu:hover span::after { transform: translateY(8px); }
-.nav_q18zpjkkx .navbar-inner .hamburger a.menu-icon { height: 14px; }
-.nav_q18zpjkkx .navbar-inner .hamburger a.menu-icon span { margin-top: 7px; }
 .nav_q18zpjkkx .navbar-inner nav ul li a span { font-size: 0.8333333333333334rem; }
 .nav_q18zpjkkx .navbar-inner nav ul li a span { color: #666666; }
 .nav_q18zpjkkx .navbar-inner nav ul li a { padding-left: 2.5rem; }
