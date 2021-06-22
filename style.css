@@ -24,5 +24,8 @@ a {
 .xl p {
   font-weight: 600;
 }
+.blog h2 > a {
+  text-decoration: none;
+}
 
 /* Overlay mobile menu */
