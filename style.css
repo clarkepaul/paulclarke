@@ -27,12 +27,15 @@ a {
 .blog h2 > a {
   text-decoration: none;
 }
-.is-frontend .show > #overlay-menu {
+.is-frontend  #overlay-menu {
+  transition: opacity .3s;
+}
+.is-frontend  #overlay-menu.show {
   z-index: 3;
   opacity: 1;
   display: block;
 }
-.is-frontend .show > #overlay-menu .overlay-menu-inner nav ul li {
+.is-frontend  #overlay-menu.show .overlay-menu-inner nav ul li {
   opacity: 1;
 }
 
