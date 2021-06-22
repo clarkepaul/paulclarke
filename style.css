@@ -27,5 +27,13 @@ a {
 .blog h2 > a {
   text-decoration: none;
 }
+.is-frontend .show > #overlay-menu {
+  z-index: 3;
+  opacity: 1;
+  display: block;
+}
+.is-frontend .show > #overlay-menu .overlay-menu-inner nav ul li {
+  opacity: 1;
+}
 
 /* Overlay mobile menu */
