@@ -38,5 +38,10 @@ a {
 .is-frontend  #overlay-menu.show .overlay-menu-inner nav ul li {
   opacity: 1;
 }
-
+.overlay-nav {
+  font-family: 'DM Mono';
+}
+.sticky-nav {
+  background-color: #FAFAFA;
+}
 /* Overlay mobile menu */
