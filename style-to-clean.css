@@ -191,3 +191,81 @@ a:hover { color: #666666; }
 	.nav_q18zpjkkx .navbar-inner .hamburger a.menu-icon span { margin-top: 7px; }
 }
 html{ margin-top:0px!important; }
+
+/* Accessibility and readability fixes */
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 100;
+	padding: 0.5rem 1rem;
+	background: #fafafa;
+	color: #1e202b;
+}
+.skip-link:focus {
+	left: 1rem;
+	top: 1rem;
+}
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid #1e202b;
+	outline-offset: 3px;
+}
+/* Section titles keep their look when used as headings, and wrap without overlapping */
+#content-holder .section-titles {
+	font-size: 1.11111rem;
+	line-height: 1.4;
+	letter-spacing: normal;
+	font-weight: 400;
+	margin-top: 0;
+}
+#content-holder h2.section-titles {
+	margin-top: 3rem;
+}
+#content-holder .post-title {
+	font-size: 1.6666666666666667rem;
+	line-height: 2.111111111111111rem;
+}
+/* Comfortable line length for long-form pages */
+.readable .is-content {
+	max-width: 38rem;
+}
+#content-holder .work-card,
+#content-holder .proof-point {
+	margin-bottom: 2rem;
+}
+.chart {
+	margin: 1.5rem 0;
+}
+.chart > svg {
+	display: block;
+	height: auto;
+}
+.chart-legend svg {
+	vertical-align: -1px;
+	margin-right: 0.4rem;
+}
+#content-holder .chart-legend {
+	list-style: none;
+	padding: 0;
+	margin: 1rem 0;
+}
+#content-holder .chart-legend li {
+	margin: 0;
+}
+.chart figcaption {
+	color: #666666;
+	font-size: 0.9rem;
+}
+/* The theme hides these until its script runs; the site does not load that script */
+#content-holder .semplice-navbar {
+	opacity: 1;
+	transform: none;
+}
+#content-holder .content-block {
+	z-index: 0;
+}
+/* Keep the portrait in proportion at narrow widths */
+.ce-image img {
+	height: auto;
+}
