@@ -270,6 +270,14 @@ button:focus-visible {
 	height: auto;
 }
 
+/* Hero text overlaps the portrait; a translucent background on each line keeps it readable */
+.hero-text {
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	padding: 0 0.1em;
+}
+
 /* Print: the Résumé page prints as a CV; other pages print without navigation */
 @media print {
 	@page {
