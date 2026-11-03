@@ -1,0 +1,18 @@
+---
+layout: layouts/page.njk
+permalink: /contact.html
+navKey: contact
+title: Contact — Paul Clarke
+description: How to get in touch with Paul Clarke.
+hasEmail: true
+---
+<h1>Get in touch</h1>
+<p class="label">Email: <span data-email>2paulclarke [at] gmail [dot] com</span></p>
+<p>I am open to discussing opportunities big or small, whether in design, UX or product leadership. I typically have some capacity for freelance projects outside my nine-to-five, so I am open to collaborating on the right project.</p>
+
+<h2>You can also find me in these places, however active I am</h2>
+<ul class="link-list">
+	{%- for item in social %}
+	<li>{{ item.label }}: <a href="{{ item.url }}">{{ item.handle }}</a></li>
+	{%- endfor %}
+</ul>

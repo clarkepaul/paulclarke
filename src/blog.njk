@@ -1,0 +1,14 @@
+---
+layout: layouts/page.njk
+permalink: /blog.html
+title: Public posts — Paul Clarke
+description: Blog posts and talks by Paul Clarke on design and the Silverstripe CMS, 2014 to 2019.
+---
+<h1>Public posts</h1>
+<p>Over the years I have contributed blog posts and marketing content. Here is a selection of pieces published under my name rather than the company's.</p>
+{%- for post in posts %}
+<div class="card">
+	<h2 class="card__title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+	<p>{{ post.note }}</p>
+</div>
+{%- endfor %}

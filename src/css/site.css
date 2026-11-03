@@ -1,0 +1,467 @@
+/* ==========================================================================
+   paulclarke.nz
+   One stylesheet: tokens, base elements, layout, components, print.
+   ========================================================================== */
+
+/* Tokens
+   -------------------------------------------------------------------------- */
+:root {
+	/* Colour */
+	--color-page: #fafafa;
+	--color-surface: #ffffff;
+	--color-text: #151b2e;
+	--color-ink: #1e202b;
+	--color-muted: #666666;
+	--color-focus: #1e202b;
+	--color-veil: rgb(255 255 255 / 0.5);
+
+	/* Chart series, darkest to lightest */
+	--color-series-1: #1e202b;
+	--color-series-2: #666666;
+	--color-series-3: #8c8c8c;
+	--color-series-4: #ffffff;
+	--color-series-stroke: #666666;
+
+	/* Type */
+	--font-sans: "DM Sans", system-ui, sans-serif;
+	--font-mono: "DM Mono", ui-monospace, monospace;
+
+	--text-body: 1rem;
+	--leading-body: 1.444;
+	--text-small: 0.9rem;
+	--text-label: 1.111rem;
+	--leading-label: 1.4;
+	--text-nav: 0.833rem;
+	--text-h1: clamp(1.8rem, 1.1rem + 2.4vw, 3rem);
+	--leading-h1: 1.27;
+	--text-h3: clamp(1.5rem, 1.25rem + 0.9vw, 1.889rem);
+	--leading-h3: 1.235;
+
+	/* Space */
+	--space-2xs: 0.25rem;
+	--space-xs: 0.5rem;
+	--space-s: 1rem;
+	--space-m: 1.667rem;
+	--space-l: 3rem;
+	--space-xl: 4.444rem;
+	--space-hero: 10rem;
+
+	/* Layout */
+	--page-max: 1500px;
+	--gutter: 1.111rem;
+	--measure: 38rem;
+	--header-height: 70px;
+}
+
+@media (min-width: 768px) {
+	:root {
+		--gutter: 1.667rem;
+	}
+}
+
+/* Base
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 112.5%; /* 18px by default, and follows the reader's own setting */
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--color-page);
+	color: var(--color-text);
+	font-family: var(--font-sans);
+	font-size: var(--text-body);
+	line-height: var(--leading-body);
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0 0 var(--space-m);
+	font-weight: 500;
+}
+
+h1 {
+	font-size: var(--text-h1);
+	line-height: var(--leading-h1);
+}
+
+h3 {
+	font-size: var(--text-h3);
+	line-height: var(--leading-h3);
+}
+
+p,
+ul {
+	margin: 0 0 1.444em;
+}
+
+ul {
+	padding-left: 1.25em;
+}
+
+li + li {
+	margin-top: var(--space-xs);
+}
+
+a {
+	color: var(--color-ink);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+a:hover {
+	color: var(--color-muted);
+}
+
+a:focus-visible {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 3px;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Layout
+   -------------------------------------------------------------------------- */
+
+/* Each section sits inside the page width and, from tablet up, is indented by one twelfth */
+.section {
+	max-width: var(--page-max);
+	margin: var(--space-l) auto 0;
+	padding-inline: var(--gutter);
+}
+
+main > .section:first-child {
+	margin-top: var(--space-xl);
+}
+
+main > .section:last-child {
+	margin-bottom: var(--space-xl);
+}
+
+.section--prose .section__inner {
+	max-width: var(--measure);
+}
+
+@media (min-width: 768px) {
+	.section__inner {
+		max-width: calc(100% * 8 / 12);
+		margin-left: calc(100% / 12);
+	}
+}
+
+/* Components
+   -------------------------------------------------------------------------- */
+
+/* Skip link */
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 100;
+	padding: var(--space-xs) var(--space-s);
+	background: var(--color-page);
+	color: var(--color-ink);
+}
+
+.skip-link:focus {
+	left: var(--space-s);
+	top: var(--space-s);
+}
+
+/* Site header */
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-xs) var(--space-l);
+	min-height: var(--header-height);
+	padding: var(--space-s) var(--gutter);
+	background: var(--color-page);
+	font-family: var(--font-mono);
+}
+
+.site-header__name {
+	color: var(--color-ink);
+	font-size: var(--text-label);
+	line-height: 1;
+	text-decoration: none;
+}
+
+.site-nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2xs) var(--space-m);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-nav li + li {
+	margin-top: 0;
+}
+
+.site-nav a {
+	color: var(--color-muted);
+	font-size: var(--text-nav);
+	text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+	color: var(--color-ink);
+	text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+	.site-nav ul {
+		gap: var(--space-l);
+	}
+}
+
+/* Mono label: section titles, dates, breadcrumbs */
+.label,
+.section h2:not(.card__title) {
+	margin: var(--space-l) 0 var(--space-m);
+	color: var(--color-muted);
+	font-family: var(--font-mono);
+	font-size: var(--text-label);
+	font-weight: 400;
+	line-height: var(--leading-label);
+}
+
+.section__inner > .label:first-child {
+	margin-top: 0;
+}
+
+.label--meta {
+	margin: 0 0 var(--space-xs);
+}
+
+/* Hero: the heading overlaps the portrait from tablet up */
+.hero {
+	display: grid;
+	max-width: var(--page-max);
+	margin: var(--space-xl) auto 0;
+	padding-inline: var(--gutter);
+}
+
+.hero__text {
+	position: relative;
+	z-index: 1;
+	margin-bottom: var(--space-xl);
+}
+
+.hero__veil {
+	background-color: var(--color-veil);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	padding: 0 0.1em;
+}
+
+@media (min-width: 768px) {
+	.hero {
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	.hero__text {
+		grid-column: 2 / span 7;
+		grid-row: 1;
+		margin-bottom: 0;
+		padding-top: 7.2rem;
+	}
+
+	.hero__image {
+		grid-column: 8 / span 4;
+		grid-row: 1;
+		padding-inline: 10px;
+	}
+}
+
+@media (min-width: 992px) {
+	.hero__text {
+		padding-top: var(--space-hero);
+	}
+}
+
+/* Cards and highlights */
+.card,
+.highlight {
+	margin-bottom: var(--space-m);
+}
+
+.card__title {
+	font-family: var(--font-sans);
+	font-size: var(--text-h3);
+	font-weight: 500;
+	line-height: var(--leading-h3);
+	margin: 0 0 var(--space-m);
+}
+
+/* Case study */
+.case-study .section__inner > h2 {
+	margin-top: var(--space-l);
+}
+
+/* Chart: a single stacked bar with a text legend */
+.chart {
+	margin: var(--space-m) 0;
+}
+
+.chart__bar {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.chart__segment {
+	stroke: var(--color-series-stroke);
+	stroke-width: 1;
+}
+
+.chart__segment--1 { fill: var(--color-series-1); }
+.chart__segment--2 { fill: var(--color-series-2); }
+.chart__segment--3 { fill: var(--color-series-3); }
+.chart__segment--4 { fill: var(--color-series-4); }
+
+.chart__legend {
+	margin: var(--space-s) 0;
+	padding: 0;
+	list-style: none;
+}
+
+.chart__legend li {
+	margin: 0;
+}
+
+.chart__swatch {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-right: 0.4rem;
+	vertical-align: -1px;
+	border: 1px solid var(--color-series-stroke);
+}
+
+.chart__swatch--1 { background: var(--color-series-1); }
+.chart__swatch--2 { background: var(--color-series-2); }
+.chart__swatch--3 { background: var(--color-series-3); }
+.chart__swatch--4 { background: var(--color-series-4); }
+
+.chart figcaption {
+	color: var(--color-muted);
+	font-size: var(--text-small);
+}
+
+/* Contact links */
+.link-list {
+	padding: 0;
+	list-style: none;
+}
+
+.link-list li {
+	margin: 0;
+}
+
+/* Print
+   The Résumé page prints as a one-page CV; other pages print without navigation.
+   -------------------------------------------------------------------------- */
+@media print {
+	@page {
+		size: A4;
+		margin: 15mm 18mm;
+	}
+
+	html {
+		font-size: 10pt;
+	}
+
+	body {
+		background: #ffffff;
+	}
+
+	.site-header,
+	.skip-link,
+	.no-print {
+		display: none !important;
+	}
+
+	.section,
+	.hero {
+		margin: 0;
+		padding: 0;
+	}
+
+	.section__inner,
+	.section--prose .section__inner {
+		max-width: none;
+		margin-left: 0;
+	}
+
+	body,
+	a {
+		color: #000000;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	h1 {
+		font-size: 2.2rem;
+		margin-bottom: 0.5rem;
+	}
+
+	h3 {
+		font-size: 1.3rem;
+		margin: 1rem 0 0.2rem;
+	}
+
+	.section h2:not(.card__title) {
+		margin: 1.4rem 0 0.6rem;
+	}
+
+	p {
+		margin-bottom: 0.5em;
+	}
+
+	.label--meta {
+		margin-bottom: 0.4em;
+	}
+
+	h2,
+	h3 {
+		break-after: avoid;
+	}
+
+	p,
+	li {
+		break-inside: avoid;
+	}
+
+	/* The Résumé heading prints as the name */
+	.resume h1 {
+		font-size: 0;
+	}
+
+	.resume h1::before {
+		content: "Paul Clarke";
+		font-size: 2.2rem;
+	}
+}
