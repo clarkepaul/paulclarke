@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>One token system for a legacy LMS and a new app-based framework — Paul Clarke</title>
+	<meta name="description" content="How a layered token contract let legacy and new interfaces share one design system.">
+
+	<link href="./bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="./frontend.min.css" type="text/css" media="all">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./style-to-clean.css" type="text/css" media="all">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+	<!-- Bootstrap JS, used by the mobile menu -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" defer></script>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ7V101BTR"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-PQ7V101BTR');
+	</script>
+</head>
+
+<body class="page is-frontend">
+	<a class="skip-link" href="#main">Skip to content</a>
+	<div id="content-holder">
+		<div id="content-1117" class="content-container active-content">
+
+			<header class="nav_q18zpjkkx semplice-navbar active-navbar sticky-nav">
+				<div class="container" data-nav="logo-left-menu-right">
+					<div class="navbar-inner menu-type-text" data-xl-width="12" data-navbar-type="container">
+						<div class="logo navbar-left"><a href="./index.html">Paul Clarke</a></div>
+						<!-- Desktop -->
+						<nav class="standard navbar-right" data-font="font_wuysgdmxb" aria-label="Main">
+							<ul class="menu">
+								<li class="menu-item current-menu-item current_page_item"><a href="./work.html" aria-current="page"><span>Work</span></a></li>
+								<li class="menu-item"><a href="./about.html"><span>About</span></a></li>
+								<li class="menu-item"><a href="./resume.html"><span>Résumé</span></a></li>
+								<li class="menu-item"><a href="./contact.html"><span>Contact</span></a></li>
+							</ul>
+						</nav>
+						<div class="hamburger navbar-right semplice-menu">
+							<a href="#overlay-menu" role="button" class="menu-icon open-menu" data-toggle="collapse" data-target="#overlay-menu" aria-controls="overlay-menu" aria-expanded="false" aria-label="Menu"><span></span></a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div id="overlay-menu" class="collapse navbar-collapse">
+				<div class="overlay-menu-inner" data-xl-width="12">
+					<nav class="overlay-nav" data-justify="center" data-align="align-middle" aria-label="Main">
+						<ul class="container">
+							<li class="menu-item current-menu-item current_page_item"><a href="./work.html" aria-current="page"><span>Work</span></a></li>
+								<li class="menu-item"><a href="./about.html"><span>About</span></a></li>
+								<li class="menu-item"><a href="./resume.html"><span>Résumé</span></a></li>
+								<li class="menu-item"><a href="./contact.html"><span>Contact</span></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+
+			<main id="main" class="transition-wrap">
+				<div class="sections">
+
+					<section class="content-block mt-5 mb-5 readable case-study" data-column-mode-sm="single" data-column-mode-xs="single">
+						<div class="container">
+							<div class="row">
+								<div class="column spacer-column" data-md-width="0" data-xl-width="1"></div>
+								<div class="column" data-xl-width="8">
+									<div class="content-wrapper">
+										<div class="is-content">
+											<p class="section-titles"><a href="./work.html">Work</a></p>
+											<h1>One token system for a legacy LMS and a new app-based framework</h1>
+											<h2 class="section-titles">Context</h2>
+											<p>Totara's LMS combines legacy interfaces, an established component library, and new applications built for a multi-product platform and app framework. Each layer handled colour differently. Enterprise and government customers theme the product to their brand and also need it to meet WCAG conformance requirements.</p>
+											<h2 class="section-titles">My role</h2>
+											<p>As Head of Design, I shaped the token architecture and its design governance. I worked with the front-end architect and engineering teams to set the foundations.</p>
+											<h2 class="section-titles">The problem</h2>
+											<p>Colour came from several sources: legacy variables, values taken directly from Tailwind, and dark-mode values that had been calculated rather than designed. Figma and code drifted apart. Customer theming could break contrast without anyone noticing. Every new product team that consumed the tokens made the structural problems harder to fix.</p>
+											<h2 class="section-titles">Key decisions</h2>
+											<ul>
+												<li><strong>A layered architecture.</strong> Primitives feed semantic tokens, which feed product-specific tokens and a mapping layer for the legacy LMS. This lets old and new interfaces share one contract while each migrates at its own pace.</li>
+												<li><strong>DTCG as the source of truth, not Figma.</strong> Figma consumes the tokens, as code does. Neither tool owns them, so the system can survive a change of tooling.</li>
+												<li><strong>OKLCH ramps anchored on the brand blue.</strong> The brand colour sits at stop 600, and the default foreground uses 700. OKLCH gives perceptually even steps, which makes contrast between stops predictable.</li>
+												<li><strong>Ramps named by hue, themes named by intent.</strong> Ramps are called blue, green, and so on, while theme names live in the brand preset selector. Primitives are never exposed as Tailwind utilities, so Totara's palette cannot collide with Tailwind's.</li>
+												<li><strong>One token, two modes.</strong> Each token has light and dark values rather than separate files or “-dark” names. This keeps the vocabulary small and makes missing dark values visible.</li>
+												<li><strong>Status colours are not themable.</strong> Alerts, toasts, and banners stay fixed. I accepted some visual clash with customer themes in exchange for colours that keep their meaning and contrast.</li>
+												<li><strong>Values first, names later.</strong> The transition adopts new values before renaming legacy identifiers, so partners face fewer breaking changes at once.</li>
+												<li><strong>Structure before values.</strong> An audit showed that the token values were close but the structure was not. I identified five structural changes, such as one name per colour with light and dark as modes, and proper ramps for status colours. These had to land before other teams contributed, because each one renames or moves tokens, and any work built on the old shape would have to be redone.</li>
+												<li><strong>Make the build hold the line.</strong> I proposed a contract-completeness check that turns gaps into build failures rather than review comments. Any token the team chooses not to expose needs a written reason in an allow-list, so every exception stays reviewable. Run against the code, the check reported 26 errors, which made the size of the problem concrete for everyone.</li>
+											</ul>
+											<h2 class="section-titles">Outcome</h2>
+											<ul>
+												<li>All core components in the new framework draw from the new tokens.</li>
+												<li>My team built an AI-assisted tool that maps every global variable in the legacy component library to the new token contract, with before-and-after visuals. Of the 304 variables covering colour and radius, 43% already connect to the contract. Most of the rest read primitives directly, which made the remaining migration a mapping task with a clear scope rather than an open-ended redesign.
+												<figure class="chart">
+													<svg viewBox="0 0 471 40" width="100%" role="img" aria-label="Stacked bar of 471 legacy variables: Connected 131, Bypasses the contract 128, Hard-coded 45, Not yet in scope 167.">
+														<rect x="1" y="1" width="129" height="38" fill="#1e202b"/>
+													<rect x="132" y="1" width="126" height="38" fill="#666666"/>
+													<rect x="260" y="1" width="43" height="38" fill="#8c8c8c"/>
+													<rect x="305" y="1" width="165" height="38" fill="#ffffff" stroke="#666666" stroke-width="1"/>
+													</svg>
+													<ul class="chart-legend">
+													<li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="#1e202b" stroke="#666666"/></svg> Connected: <strong>131</strong></li>
+													<li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="#666666" stroke="#666666"/></svg> Bypasses the contract: <strong>128</strong></li>
+													<li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="#8c8c8c" stroke="#666666"/></svg> Hard-coded: <strong>45</strong></li>
+													<li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="13" height="13" fill="#ffffff" stroke="#666666"/></svg> Not yet in scope: <strong>167</strong></li>
+													</ul>
+													<figcaption>How the 471 global variables in the legacy library relate to the new token contract. The first three groups are the 304 colour and radius variables; 131 of them (43%) already connect.</figcaption>
+												</figure>
+											</li>
+												<li>The audit identified contrast and dark-mode issues before release and placed them in a prioritised remediation register, including a single focus-ring change across 21 components that raises contrast from about 2:1 to almost 5:1.</li>
+												<li>The design team manages tokens in a dedicated Figma file that raises pull requests into the code repository.</li>
+											</ul>
+											<h2 class="section-titles">Reflection</h2>
+											<p>I would agree ownership of the primitives with engineering before agreeing any values, because adoption depended on shared ownership. I would also build the automated check earlier. The audit persuaded people in a way that discussion had not, and having it from the start would have kept the contract complete as teams added to it.</p>
+
+											<h2 class="section-titles">Read next</h2>
+											<p><a href="./case-study-ai-first-practice.html">Moving a design practice to AI-first</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+		</div>
+	</div>
+</body>
+</html>
