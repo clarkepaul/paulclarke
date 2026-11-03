@@ -269,3 +269,79 @@ button:focus-visible {
 .ce-image img {
 	height: auto;
 }
+
+/* Print: the Résumé page prints as a CV; other pages print without navigation */
+@media print {
+	@page {
+		size: A4;
+		margin: 15mm 18mm;
+	}
+	html {
+		font-size: 10pt;
+	}
+	header.semplice-navbar,
+	#overlay-menu,
+	.skip-link,
+	.no-print,
+	.spacer-column {
+		display: none !important;
+	}
+	#content-holder,
+	#content-holder .content-container,
+	#content-holder .transition-wrap {
+		position: static !important;
+		background: #ffffff !important;
+	}
+	#content-holder .column {
+		width: 100% !important;
+		max-width: 100% !important;
+		flex-basis: 100% !important;
+	}
+	.readable .is-content {
+		max-width: none;
+	}
+	#content-holder .content-block {
+		margin: 0 !important;
+	}
+	.is-content,
+	#content-holder a {
+		color: #000000;
+	}
+	#content-holder a {
+		text-decoration: none;
+	}
+	#content-holder h1 {
+		font-size: 2.2rem;
+		line-height: 1.2;
+		margin-bottom: 0.5rem;
+	}
+	#content-holder h2.section-titles {
+		margin-top: 1.4rem;
+		margin-bottom: 0.6rem;
+	}
+	#content-holder h3 {
+		font-size: 1.3rem;
+		line-height: 1.3;
+		margin: 1rem 0 0.2rem;
+	}
+	#content-holder .is-content p {
+		margin-bottom: 0.5em;
+	}
+	#content-holder p.section-titles {
+		margin-bottom: 0.4em;
+	}
+	h2, h3 {
+		break-after: avoid;
+	}
+	p, li {
+		break-inside: avoid;
+	}
+	.resume #content-holder h1 {
+		/* Résumé heading becomes the name on the printed CV */
+		font-size: 0;
+	}
+	.resume #content-holder h1::before {
+		content: "Paul Clarke";
+		font-size: 2.2rem;
+	}
+}
