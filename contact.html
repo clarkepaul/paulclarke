@@ -79,10 +79,24 @@
 									<div class="content-wrapper">
 										<div class="is-content">
 											<h1>Get in touch</h1>
-											<p class="section-titles">Email: <span class="font_wuysgdmxb">2paulclarke [at] gmail [dot] com</span></p>
+											<p class="section-titles">Email: <span class="font_wuysgdmxb" id="email">2paulclarke [at] gmail [dot] com</span></p>
+											<script>
+											  // Build the address in the browser so it never appears whole in the page source
+											  (function () {
+											    var user = ['2paul', 'clarke'].join('');
+											    var domain = ['gmail', 'com'].join('.');
+											    var address = user + '@' + domain;
+											    var link = document.createElement('a');
+											    link.href = 'mailto:' + address;
+											    link.textContent = address;
+											    var target = document.getElementById('email');
+											    target.textContent = '';
+											    target.appendChild(link);
+											  })();
+											</script>
 											<p>I am open to discussing opportunities big or small, whether in design, UX or product leadership. I typically have some capacity for freelance projects outside my nine-to-five, so I am open to collaborating on the right project.</p>
 											<h2 class="section-titles">You can also find me in these places, however active I am</h2>
-											<p>Instagram: <a href="https://www.instagram.com/clarkepaul/"><span class="font_wuysgdmxb">@clarkepaul</span></a><br>Twitter: <a href="https://twitter.com/clarkepaul"><span class="font_wuysgdmxb">@clarkepaul</span></a><br>LinkedIn: <a href="https://www.linkedin.com/in/clarkepaul/"><span class="font_wuysgdmxb">@clarkepaul</span></a><br>GitHub: <a href="https://www.github.com/clarkepaul/"><span class="font_wuysgdmxb">@clarkepaul</span></a><br>CodePen: <a href="https://codepen.io/clarkepaul"><span class="font_wuysgdmxb">@clarkepaul</span></a></p>
+											<p>Instagram: <a href="https://www.instagram.com/clarkepaul/"><span class="font_wuysgdmxb">@clarkepaul</span></a><br>LinkedIn: <a href="https://www.linkedin.com/in/clarkepaul/"><span class="font_wuysgdmxb">@clarkepaul</span></a><br>GitHub: <a href="https://www.github.com/clarkepaul/"><span class="font_wuysgdmxb">@clarkepaul</span></a><br>CodePen: <a href="https://codepen.io/clarkepaul"><span class="font_wuysgdmxb">@clarkepaul</span></a></p>
 										</div>
 									</div>
 								</div>
