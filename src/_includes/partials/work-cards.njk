@@ -1,0 +1,7 @@
+{#- Lists every case study. Set `cardHeading` to h2 or h3 to fit the page's heading levels. -#}
+{%- for study in collections.caseStudies %}
+<div class="card">
+	<{{ cardHeading }} class="card__title"><a href="{{ study.url }}">{{ study.data.heading }}</a></{{ cardHeading }}>
+	<p>{{ study.data.summary }}</p>
+</div>
+{%- endfor %}

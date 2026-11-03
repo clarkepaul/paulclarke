@@ -1,0 +1,11 @@
+{
+	"name": "Paul Clarke",
+	"url": "https://paulclarke.nz",
+	"analyticsId": "G-PQ7V101BTR",
+	"nav": [
+		{ "key": "work", "url": "/work.html", "label": "Work" },
+		{ "key": "about", "url": "/about.html", "label": "About" },
+		{ "key": "resume", "url": "/resume.html", "label": "Résumé" },
+		{ "key": "contact", "url": "/contact.html", "label": "Contact" }
+	]
+}

@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+navKey: work
+---
+{%- set next = collections.caseStudies | nextAfter(page.url) -%}
+<article class="section section--prose case-study">
+	<div class="section__inner">
+		<p class="label"><a href="/work.html">Work</a></p>
+		<h1>{{ heading }}</h1>
+		{{ content | safe }}
+		{%- if next and next.url != page.url %}
+		<h2>Read next</h2>
+		<p><a href="{{ next.url }}">{{ next.data.heading }}</a></p>
+		{%- endif %}
+	</div>
+</article>

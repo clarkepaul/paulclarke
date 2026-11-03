@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+permalink: /index.html
+title: Paul Clarke — Head of Design
+description: Head of Design leading teams and building the design systems that let product design scale.
+bodyClass: home
+---
+<section class="hero">
+	<div class="hero__text">
+		<h1><span class="hero__veil">Head of Design.<br>I lead design teams and build the systems that let product design scale.</span></h1>
+	</div>
+	<div class="hero__image">
+		<img src="/images/paul-clarke.jpg" width="667" height="1000" alt="Paul Clarke, smiling, in a blue T-shirt against a blue background">
+	</div>
+</section>
+
+<section class="section">
+	<div class="section__inner">
+		<p>I lead design across <a href="https://www.totara.com/">Totara</a>'s learning platform. My work spans UX strategy, design systems, accessibility and the tooling that connects design to code. Most recently I have been moving our design practice to an AI-first way of working.</p>
+		<p>Before Totara, I spent more than ten years at <a href="https://www.silverstripe.com/">Silverstripe</a>, leading UX for the open-source CMS and Silverstripe Cloud, and helping build the all-of-government Common Web Platform.</p>
+	</div>
+</section>
+
+<section class="section">
+	<div class="section__inner">
+		<h2>Highlights</h2>
+		<div class="highlight">
+			<h3>One token system across old and new products</h3>
+			<p>All core components in the new framework draw from a single token contract, and 43% of the legacy library already connects to it. <a href="/case-study-token-system.html">Read the token system case study</a></p>
+		</div>
+		<div class="highlight">
+			<h3>AI that measures, not only generates</h3>
+			<p>My team combined AI-assisted analysis with design review to map all 471 legacy variables and turn the gaps into a check the build enforces. <a href="/case-study-ai-first-practice.html">Read the AI-first practice case study</a></p>
+		</div>
+		<div class="highlight">
+			<h3>Fifteen years leading design teams</h3>
+			<p>I have led small, multidisciplinary teams of designers and researchers at Silverstripe and Totara, building the systems and standards that let a small team support an enterprise platform.</p>
+		</div>
+	</div>
+</section>
+
+<section class="section">
+	<div class="section__inner">
+		<h2>Selected work</h2>
+		{%- set cardHeading = "h3" %}
+		{% include "partials/work-cards.njk" %}
+	</div>
+</section>
+
+<section class="section">
+	<div class="section__inner">
+		<h2>About</h2>
+		<p>Outside work I have a family to entertain and wrangle, a retro bus we use as a family motorhome, and a garden to tend. I spend as much time near the water as I can. <a href="/about.html">More about me</a></p>
+		{% include "partials/cta.njk" %}
+	</div>
+</section>
