@@ -88,7 +88,21 @@
 											<h1>Résumé</h1>
 											<!-- Draft summary: review before publishing. -->
 											<p>Design leader with fifteen years leading design teams at Totara and Silverstripe. I lead design teams and build the systems that let product design scale.</p>
-											<p>Wellington, New Zealand · <a href="https://paulclarke.nz/">paulclarke.nz</a> · <a href="https://www.linkedin.com/in/clarkepaul/">linkedin.com/in/clarkepaul</a><span class="no-print"> · <a href="./resume.html?print">Download my CV</a></span></p>
+											<p>Wellington, New Zealand · <span id="email">2paulclarke [at] gmail [dot] com</span> · <a href="https://paulclarke.nz/">paulclarke.nz</a> · <a href="https://www.linkedin.com/in/clarkepaul/">linkedin.com/in/clarkepaul</a><span class="no-print"> · <a href="./resume.html?print">Download my CV</a></span></p>
+											<script>
+											  // Build the address in the browser so it never appears whole in the page source
+											  (function () {
+											    var user = ['2paul', 'clarke'].join('');
+											    var domain = ['gmail', 'com'].join('.');
+											    var address = user + '@' + domain;
+											    var link = document.createElement('a');
+											    link.href = 'mailto:' + address;
+											    link.textContent = address;
+											    var target = document.getElementById('email');
+											    target.textContent = '';
+											    target.appendChild(link);
+											  })();
+											</script>
 
 											<h2 class="section-titles">Experience</h2>
 											<h3>Head of Experience Design, Totara Learning</h3>
