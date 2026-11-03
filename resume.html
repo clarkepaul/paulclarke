@@ -29,6 +29,13 @@
 
 	  gtag('config', 'G-PQ7V101BTR');
 	</script>
+	<script>
+	  if (new URLSearchParams(location.search).has('print')) {
+	    window.addEventListener('load', function () {
+	      document.fonts.ready.then(function () { window.print(); });
+	    });
+	  }
+	</script>
 </head>
 
 <body class="page resume is-frontend">
@@ -81,7 +88,7 @@
 											<h1>Résumé</h1>
 											<!-- Draft summary: review before publishing. -->
 											<p>Design leader with fifteen years leading design teams at Totara and Silverstripe. I lead design teams and build the systems that let product design scale.</p>
-											<p>Wellington, New Zealand · <a href="https://paulclarke.nz/">paulclarke.nz</a> · <a href="https://www.linkedin.com/in/clarkepaul/">linkedin.com/in/clarkepaul</a><span class="no-print"> · <a href="./paul-clarke-cv.pdf">Download my CV (PDF)</a></span></p>
+											<p>Wellington, New Zealand · <a href="https://paulclarke.nz/">paulclarke.nz</a> · <a href="https://www.linkedin.com/in/clarkepaul/">linkedin.com/in/clarkepaul</a><span class="no-print"> · <a href="./resume.html?print">Download my CV</a></span></p>
 
 											<h2 class="section-titles">Experience</h2>
 											<h3>Head of Experience Design, Totara Learning</h3>
