@@ -254,6 +254,15 @@ main > .section:last-child {
 	margin: 0 0 var(--space-xs);
 }
 
+/* Résumé: each role reads as one unit, with more space before its heading than after it */
+.resume h3 {
+	margin: var(--space-l) 0 var(--space-2xs);
+}
+
+.resume h2 + h3 {
+	margin-top: 0;
+}
+
 /* Hero: the heading overlaps the portrait from tablet up */
 .hero {
 	display: grid;
@@ -428,9 +437,14 @@ main > .section:last-child {
 		margin-bottom: 0.5rem;
 	}
 
-	h3 {
+	h3,
+	.resume h3 {
 		font-size: 1.3rem;
 		margin: 1rem 0 0.2rem;
+	}
+
+	.resume h2 + h3 {
+		margin-top: 0;
 	}
 
 	.section h2:not(.card__title) {
