@@ -416,6 +416,8 @@ main > .section:last-child {
 	}
 
 	.section,
+	main > .section:first-child,
+	main > .section:last-child,
 	.hero {
 		margin: 0;
 		padding: 0;
@@ -455,8 +457,28 @@ main > .section:last-child {
 		margin: 1.4rem 0 0.6rem;
 	}
 
-	p {
+	p,
+	ul {
 		margin-bottom: 0.5em;
+	}
+
+	li + li {
+		margin-top: 0.15em;
+	}
+
+	/* Short lists print on one line to keep the CV to a page */
+	.inline-print {
+		padding: 0;
+		list-style: none;
+	}
+
+	.inline-print li {
+		display: inline;
+		margin: 0;
+	}
+
+	.inline-print li + li::before {
+		content: " · ";
 	}
 
 	.label--meta {
