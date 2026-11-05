@@ -55,10 +55,12 @@ Friction is recorded in the user's words, against a job, so a score always has a
 
 ## Outcome
 
-- **Owned by product leads.** Capability areas have named owners who maintain their own health and importance scores.
+- **Owned by product leads.** Capability areas have named owners who maintain their own health and importance scores. Each area has a page in a Confluence health dashboard, so the model lives where product teams already plan, rather than in a new tool they would have to adopt.
 - **A monthly AI review.** Product management runs the review each month, with proposed changes approved area by area. Product leads trust the output because the AI shows its working as a proposed difference against the current page, and the owner remains accountable for the score.
 - **A route to the roadmap.** The model is being aligned with the product capability framework, so roadmap bets trace back to evidence.
 
 ## Reflection
 
-The model moved from one designer's spreadsheet to the product team's operating rhythm once it became simple enough for others to score. Next, I would replace opinion with usage data by finishing telemetry as a foundation, settle ownership of the open dimensions of security and core architecture, and add friction evidence from usability sessions alongside portal votes, so quiet but painful jobs are not under-scored.
+The model moved from one designer's spreadsheet to the product team's operating rhythm once it became simple enough for others to score. Starting in Confluence was deliberate: it proved the structure and the review rhythm before anyone invested in tooling.
+
+The next phase is a visual dashboard that brings both kinds of evidence together: quantitative signals such as votes, NPS and usage, and qualitative evidence such as friction recorded in users' words against a job. Pages of text show one area at a time; a dashboard can show the whole portfolio at once and let someone move from a score to the reason behind it. Alongside that, I would replace opinion with usage data by finishing telemetry as a foundation, settle ownership of the open dimensions of security and core architecture, and add friction evidence from usability sessions alongside portal votes, so quiet but painful jobs are not under-scored.
