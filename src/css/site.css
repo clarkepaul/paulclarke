@@ -254,6 +254,15 @@ main > .section:last-child {
 	margin: 0 0 var(--space-xs);
 }
 
+/* Résumé: each role reads as one unit, with more space before its heading than after it */
+.resume h3 {
+	margin: var(--space-l) 0 var(--space-2xs);
+}
+
+.resume h2 + h3 {
+	margin-top: 0;
+}
+
 /* Hero: the heading overlaps the portrait from tablet up */
 .hero {
 	display: grid;
@@ -300,10 +309,10 @@ main > .section:last-child {
 	}
 }
 
-/* Cards and highlights */
+/* Cards and highlights: more space between items than between a title and its text */
 .card,
 .highlight {
-	margin-bottom: var(--space-m);
+	margin-bottom: var(--space-l);
 }
 
 .card__title {
@@ -311,7 +320,11 @@ main > .section:last-child {
 	font-size: var(--text-h3);
 	font-weight: 500;
 	line-height: var(--leading-h3);
-	margin: 0 0 var(--space-m);
+}
+
+.card__title,
+.highlight h3 {
+	margin: 0 0 var(--space-xs);
 }
 
 /* Case study */
@@ -403,6 +416,8 @@ main > .section:last-child {
 	}
 
 	.section,
+	main > .section:first-child,
+	main > .section:last-child,
 	.hero {
 		margin: 0;
 		padding: 0;
@@ -428,17 +443,42 @@ main > .section:last-child {
 		margin-bottom: 0.5rem;
 	}
 
-	h3 {
+	h3,
+	.resume h3 {
 		font-size: 1.3rem;
 		margin: 1rem 0 0.2rem;
+	}
+
+	.resume h2 + h3 {
+		margin-top: 0;
 	}
 
 	.section h2:not(.card__title) {
 		margin: 1.4rem 0 0.6rem;
 	}
 
-	p {
+	p,
+	ul {
 		margin-bottom: 0.5em;
+	}
+
+	li + li {
+		margin-top: 0.15em;
+	}
+
+	/* Short lists print on one line to keep the CV to a page */
+	.inline-print {
+		padding: 0;
+		list-style: none;
+	}
+
+	.inline-print li {
+		display: inline;
+		margin: 0;
+	}
+
+	.inline-print li + li::before {
+		content: " · ";
 	}
 
 	.label--meta {
