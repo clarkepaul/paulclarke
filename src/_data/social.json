@@ -2,5 +2,6 @@
 	{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/clarkepaul/", "handle": "@clarkepaul" },
 	{ "label": "Instagram", "url": "https://www.instagram.com/clarkepaul/", "handle": "@clarkepaul" },
 	{ "label": "GitHub", "url": "https://www.github.com/clarkepaul/", "handle": "@clarkepaul" },
-	{ "label": "CodePen", "url": "https://codepen.io/clarkepaul", "handle": "@clarkepaul" }
+	{ "label": "CodePen", "url": "https://codepen.io/clarkepaul", "handle": "@clarkepaul" },
+	{ "label": "Bus blog", "url": "https://dustyandthesardines.nz/", "handle": "Dusty and the Sardines" }
 ]
