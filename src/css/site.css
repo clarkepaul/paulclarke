@@ -14,7 +14,8 @@
 	--color-muted: #666666;
 	--color-focus: #1e202b;
 	--color-veil: rgb(255 255 255 / 0.5);
-	--color-highlight: #f9b26b; /* warm apricot, to balance the blue portrait */
+	--color-highlight: #fcd3a5; /* light apricot, to balance the blue portrait */
+	--color-strong: #000000;
 
 	/* Chart series, darkest to lightest */
 	--color-series-1: #1e202b;
@@ -242,6 +243,10 @@ main > .section:last-child {
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
 	color: var(--color-ink);
+}
+
+.site-nav a[aria-current="page"] {
+	color: var(--color-strong);
 }
 
 .site-nav a:hover::before,
