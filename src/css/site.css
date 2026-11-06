@@ -14,6 +14,7 @@
 	--color-muted: #666666;
 	--color-focus: #1e202b;
 	--color-veil: rgb(255 255 255 / 0.5);
+	--color-highlight: #f9b26b; /* warm apricot, to balance the blue portrait */
 
 	/* Chart series, darkest to lightest */
 	--color-series-1: #1e202b;
@@ -218,15 +219,40 @@ main > .section:last-child {
 }
 
 .site-nav a {
+	position: relative;
+	isolation: isolate;
 	color: var(--color-muted);
 	font-size: var(--text-nav);
 	text-decoration: none;
 }
 
+/* A bar behind the lower half of the label, starting to its left; it grows on hover and stays on the current page */
+.site-nav a::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: -0.6em;
+	bottom: 0.1em;
+	width: 0;
+	height: 0.65em;
+	background: var(--color-highlight);
+	transition: width 0.3s ease;
+}
+
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
 	color: var(--color-ink);
-	text-decoration: underline;
+}
+
+.site-nav a:hover::before,
+.site-nav a[aria-current="page"]::before {
+	width: calc(100% + 0.6em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-nav a::before {
+		transition: none;
+	}
 }
 
 @media (min-width: 768px) {
