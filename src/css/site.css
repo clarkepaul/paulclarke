@@ -14,7 +14,7 @@
 	--color-muted: #666666;
 	--color-focus: #1e202b;
 	--color-veil: rgb(255 255 255 / 0.5);
-	--color-highlight: #fcd3a5; /* light apricot, to balance the blue portrait */
+	--color-highlight: #dcf48e; /* lime, to contrast with the blue portrait */
 	--color-strong: #000000;
 
 	/* Chart series, darkest to lightest */
