@@ -14,7 +14,7 @@
 	--color-muted: #666666;
 	--color-focus: #1e202b;
 	--color-veil: rgb(255 255 255 / 0.5);
-	--color-highlight: #fcd3a5; /* light apricot, to balance the blue portrait */
+	--color-highlight: #dcf48e; /* lime, to contrast with the blue portrait */
 	--color-strong: #000000;
 
 	/* Chart series, darkest to lightest */
@@ -26,6 +26,7 @@
 
 	/* Type */
 	--font-sans: "DM Sans", system-ui, sans-serif;
+	--font-display: "Fraunces", Georgia, serif;
 	--font-mono: "DM Mono", ui-monospace, monospace;
 
 	--text-body: 1rem;
@@ -88,6 +89,7 @@ h1,
 h2,
 h3 {
 	margin: 0 0 var(--space-m);
+	font-family: var(--font-display);
 	font-weight: 500;
 }
 
@@ -138,7 +140,7 @@ img {
 /* Layout
    -------------------------------------------------------------------------- */
 
-/* Each section sits inside the page width and, from tablet up, is indented by one twelfth */
+/* Each section sits inside the page width, with its content column centred */
 .section {
 	max-width: var(--page-max);
 	margin: var(--space-l) auto 0;
@@ -153,6 +155,10 @@ main > .section:last-child {
 	margin-bottom: var(--space-xl);
 }
 
+.section__inner {
+	margin-inline: auto;
+}
+
 .section--prose .section__inner {
 	max-width: var(--measure);
 }
@@ -160,7 +166,6 @@ main > .section:last-child {
 @media (min-width: 768px) {
 	.section__inner {
 		max-width: calc(100% * 8 / 12);
-		margin-left: calc(100% / 12);
 	}
 }
 
@@ -347,7 +352,7 @@ main > .section:last-child {
 }
 
 .card__title {
-	font-family: var(--font-sans);
+	font-family: var(--font-display);
 	font-size: var(--text-h3);
 	font-weight: 500;
 	line-height: var(--leading-h3);
