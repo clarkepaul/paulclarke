@@ -140,7 +140,7 @@ img {
 /* Layout
    -------------------------------------------------------------------------- */
 
-/* Each section sits inside the page width and, from tablet up, is indented by one twelfth */
+/* Each section sits inside the page width, with its content column centred */
 .section {
 	max-width: var(--page-max);
 	margin: var(--space-l) auto 0;
@@ -155,6 +155,10 @@ main > .section:last-child {
 	margin-bottom: var(--space-xl);
 }
 
+.section__inner {
+	margin-inline: auto;
+}
+
 .section--prose .section__inner {
 	max-width: var(--measure);
 }
@@ -162,7 +166,6 @@ main > .section:last-child {
 @media (min-width: 768px) {
 	.section__inner {
 		max-width: calc(100% * 8 / 12);
-		margin-left: calc(100% / 12);
 	}
 }
 
