@@ -11,6 +11,16 @@ npm start
 
 `npm start` serves the site at http://localhost:8080 and rebuilds on every save. `npm run build` writes the finished site to `_site/`.
 
+## Regenerating the CV PDF
+
+The "Download my CV" links point to `/Paul-Clarke-CV.pdf`, which is built from `resume.html`. After changing `src/resume.njk` or `src/css/resume.css`, run:
+
+```bash
+npm run cv
+```
+
+This builds the site, prints `/resume.html` in Chrome with print styles (A4, no browser headers or footers), and writes `src/Paul-Clarke-CV.pdf`. Commit the PDF with the change; the publish workflow copies it as it is. The script uses your installed Google Chrome; without it, run `npx playwright install chromium` once. It needs a network connection to load the Google Fonts.
+
 ## Where things live
 
 - `src/css/site.css` holds all the styling. Design tokens (colour, type, space) are at the top.

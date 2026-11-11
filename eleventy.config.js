@@ -5,6 +5,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ "src/images": "images" });
 	eleventyConfig.addPassthroughCopy({ "src/favicons": "/" });
 	eleventyConfig.addPassthroughCopy({ "CNAME": "CNAME" });
+	eleventyConfig.addPassthroughCopy({ "src/Paul-Clarke-CV.pdf": "Paul-Clarke-CV.pdf" }); // built by npm run cv
 
 	// Case studies, in the order set by each file's `order` value
 	eleventyConfig.addCollection("caseStudies", (collectionApi) =>
