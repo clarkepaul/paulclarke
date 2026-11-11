@@ -10,7 +10,7 @@
 	--accent: #2c5a85;       /* role titles and links */
 	--rule: #d5dce5;         /* column divider */
 	--paper: #ffffff;
-	--desk: #e8ecf1;         /* screen background around the sheet */
+	--desk: var(--color-page); /* screen background around the sheet: the site's page colour */
 
 	--serif: "Literata", Georgia, "Times New Roman", serif;
 	--sans: "Public Sans", "Helvetica Neue", Arial, sans-serif;
