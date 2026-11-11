@@ -7,14 +7,14 @@
    -------------------------------------------------------------------------- */
 :root {
 	/* Colour */
-	--color-page: #fafafa;
+	--color-page: #f8f4ed;
 	--color-surface: #ffffff;
-	--color-text: #151b2e;
-	--color-ink: #1e202b;
+	--color-text: #202a24;
+	--color-ink: #202a24;
 	--color-muted: #666666;
-	--color-focus: #1e202b;
+	--color-focus: #202a24;
 	--color-veil: rgb(255 255 255 / 0.5);
-	--color-highlight: #dcf48e; /* lime, to contrast with the blue portrait */
+	--color-highlight: #7c942e; /* olive green, 3.1:1 on the page colour */
 	--color-strong: #000000;
 
 	/* Chart series, darkest to lightest */
@@ -232,15 +232,16 @@ main > .section:last-child {
 	text-decoration: none;
 }
 
-/* A bar behind the lower half of the label, starting to its left; it grows on hover and stays on the current page */
+/* A thin line under the label, starting to its left; it grows on hover and stays on the current page */
 .site-nav a::before {
 	content: "";
 	position: absolute;
 	z-index: -1;
-	left: -0.6em;
-	bottom: 0.1em;
+	left: -0.9em;
+	bottom: -0.2em;
 	width: 0;
-	height: 0.65em;
+	height: 0.2em;
+	border-radius: 3px 3px 0 0;
 	background: var(--color-highlight);
 	transition: width 0.3s ease;
 }
@@ -256,7 +257,7 @@ main > .section:last-child {
 
 .site-nav a:hover::before,
 .site-nav a[aria-current="page"]::before {
-	width: calc(100% + 0.6em);
+	width: calc(100% + 0.9em);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -313,6 +314,10 @@ main > .section:last-child {
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
 	padding: 0 0.1em;
+}
+
+.hero__image img {
+	border-radius: 12px;
 }
 
 @media (min-width: 768px) {
