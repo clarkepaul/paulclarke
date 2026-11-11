@@ -294,15 +294,6 @@ main > .section:last-child {
 	line-height: var(--leading-body);
 }
 
-/* Résumé: each role reads as one unit, with more space before its heading than after it */
-.resume h3 {
-	margin: var(--space-l) 0 var(--space-2xs);
-}
-
-.resume h2 + h3 {
-	margin-top: 0;
-}
-
 /* Hero: the heading overlaps the portrait from tablet up */
 .hero {
 	display: grid;
@@ -483,14 +474,9 @@ main > .section:last-child {
 		margin-bottom: 0.5rem;
 	}
 
-	h3,
-	.resume h3 {
+	h3 {
 		font-size: 1.3rem;
 		margin: 1rem 0 0.2rem;
-	}
-
-	.resume h2 + h3 {
-		margin-top: 0;
 	}
 
 	.section h2:not(.card__title) {
@@ -506,21 +492,6 @@ main > .section:last-child {
 		margin-top: 0.15em;
 	}
 
-	/* Short lists print on one line to keep the CV to a page */
-	.inline-print {
-		padding: 0;
-		list-style: none;
-	}
-
-	.inline-print li {
-		display: inline;
-		margin: 0;
-	}
-
-	.inline-print li + li::before {
-		content: " · ";
-	}
-
 	.label--meta {
 		margin-bottom: 0.4em;
 	}
@@ -533,15 +504,5 @@ main > .section:last-child {
 	p,
 	li {
 		break-inside: avoid;
-	}
-
-	/* The Résumé heading prints as the name */
-	.resume h1 {
-		font-size: 0;
-	}
-
-	.resume h1::before {
-		content: "Paul Clarke";
-		font-size: 2.2rem;
 	}
 }

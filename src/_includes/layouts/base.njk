@@ -9,7 +9,13 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Fraunces:opsz,wght@9..144,400;9..144,500&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+	{%- if extraFonts %}
+	<link href="{{ extraFonts }}" rel="stylesheet">
+	{%- endif %}
 	<link rel="stylesheet" href="/css/site.css">
+	{%- if extraStylesheet %}
+	<link rel="stylesheet" href="{{ extraStylesheet }}">
+	{%- endif %}
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -22,8 +28,11 @@
 	  gtag('js', new Date());
 	  gtag('config', '{{ site.analyticsId }}');
 	</script>
-	{%- if printOnRequest %}
-	<script src="/js/print-on-request.js" defer></script>
+	{%- if cvRedirect %}
+	<script>
+	  // Old "Download my CV" links pointed to resume.html?print; send them to the PDF.
+	  if (new URLSearchParams(location.search).has('print')) location.replace('/Paul-Clarke-CV.pdf');
+	</script>
 	{%- endif %}
 </head>
 

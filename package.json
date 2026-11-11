@@ -4,10 +4,13 @@
   "description": "Personal site for Paul Clarke, built with Eleventy",
   "scripts": {
     "start": "eleventy --serve --port=8080",
-    "build": "eleventy"
+    "build": "eleventy",
+    "cv": "node scripts/build-cv.mjs"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.7"
+    "@11ty/eleventy": "^3.1.7",
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.65.0"
   },
   "type": "module"
 }

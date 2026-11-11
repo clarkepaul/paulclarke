@@ -1,60 +1,118 @@
 ---
-layout: layouts/page.njk
+layout: layouts/base.njk
 permalink: /resume.html
 navKey: resume
 title: Résumé — Paul Clarke
 description: Career summary and CV for Paul Clarke, Head of Design.
 bodyClass: resume
 hasEmail: true
-printOnRequest: true
+cvRedirect: true
+extraFonts: https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Public+Sans:wght@400;600&display=swap
+extraStylesheet: /css/resume.css
 ---
-<h1>Résumé</h1>
-<p>Design leader with fifteen years leading design teams at Totara and Silverstripe. I lead design teams and build the systems that let product design scale.</p>
-<p>Wellington, New Zealand · <span data-email>2paulclarke [at] gmail [dot] com</span> · <a href="https://paulclarke.nz/">paulclarke.nz</a> · <a href="https://www.linkedin.com/in/clarkepaul/">linkedin.com/in/clarkepaul</a><span class="no-print"> · <a href="/resume.html?print">Download my CV</a></span></p>
+{#- One source for the web page and the PDF (npm run cv).
+    Experience comes before the sidebar in the source so screen readers, applicant tracking systems
+    and the PDF text layer read it first; CSS grid places the sidebar on the left. -#}
+<div class="cv">
+	<article class="sheet" aria-labelledby="cv-title">
 
-<h2>Experience</h2>
+		<header class="masthead">
+			<h1 id="cv-title"><span class="screen-only">Résumé</span><span class="print-only">Paul Clarke</span></h1>
+			<p class="lede">Design leader with fifteen years leading design teams at Totara and Silverstripe. I lead design teams and build the systems that let product design scale.</p>
+			<p class="cv-download no-print"><a href="/Paul-Clarke-CV.pdf">Download my CV</a></p>
+		</header>
 
-<h3>Head of Experience Design, Totara Learning</h3>
-<p class="label label--meta">January 2022 to present · Wellington</p>
-<p>Leads design across Totara's learning platform, covering UX strategy, design systems, accessibility and design-to-code tooling. Leads a team of designers and researchers, and the move to an AI-first design practice.</p>
-<ul>
-	<li>Initiated and led Inspire, a cross-team R&amp;D programme that shipped in Totara 19: a new default theme with side navigation, a task-based information architecture, a rebuilt catalogue, a single library and workspace overview, and correct page headings across the product. Wrote the business case, consulted 12 strategic partners, and steered platform, product, QA and documentation teams through three delivery increments.</li>
-	<li>Shaped a layered design token architecture that lets the legacy LMS and the new multi-product app framework share one design system, with a build check that turns token gaps into build failures.</li>
-	<li>Led an accessibility and dark-mode audit that produced a prioritised remediation register, including a focus-ring change across 21 components that raised contrast from about 2:1 to almost 5:1.</li>
-	<li>Wrote a product health model that divides the platform into 25 owned capability areas, scores health and strategic importance separately, and runs a monthly AI-assisted review of customer demand and NPS.</li>
-	<li>Restructured six years of scattered research notes into a directory that product managers now maintain: 408 entries since 2022, 97% of them added by 16 colleagues across product and R&amp;D.</li>
-	<li>Moved the team to an AI-first practice that uses AI to measure design quality, including a tool that maps all 471 legacy global variables to the new token contract.</li>
-</ul>
+		<div class="layout">
 
-<h3>Silverstripe</h3>
-<p class="label label--meta">March 2010 to January 2022 · New Zealand</p>
-<p><strong>Lead Experience Designer for Product, 2016 to 2022.</strong> Led the user experience and design of the open-source Silverstripe CMS and Silverstripe Cloud, the company's hosting and deployment service.</p>
-<ul>
-	<li>Created the design system for Silverstripe CMS.</li>
-	<li>Designed and directed the Content Blocks feature, which increased developer engagement and open-source contributions.</li>
-	<li>Led the rebrand and sub-brands for Silverstripe Cloud.</li>
-</ul>
-<p><strong>Design Manager, 2010 to 2016.</strong> Planned and resourced the design and front-end development team, and led a small UX team.</p>
-<ul>
-	<li>Created and launched Silverstripe Cloud, which grew in customers and revenue year on year.</li>
-	<li>Created and launched the NZ Government Common Web Platform with the Department of Internal Affairs and Revera: the hosting platform, its management tools and its website.</li>
-	<li>Integrated a front-end framework into Silverstripe CMS and rewrote its front-end code, making community contributions easier.</li>
-</ul>
-<p><strong>Agency projects.</strong> Planned, consulted on and designed client websites, mostly for the public sector, and built the front ends for many of them. These included Metlink, Greater Wellington's journey planner; the Health Quality &amp; Safety Commission, bringing around ten health programmes with their own identities into one website; and Plunket.</p>
+			<section class="experience" aria-labelledby="experience">
+				<h2 id="experience">Experience</h2>
 
-<h3>Earlier work</h3>
-<p><strong>Web Developer and Designer, Blackbox Design, 2008 to 2011.</strong> Commercial work ranging from print design to building websites.</p>
-<p><strong>Designer, Excel Media Group and HR Magazine Hong Kong, 2009.</strong> Brand creation, business publication redesign and layout design.</p>
+				<div class="role">
+					<h3>Head of Experience Design, Totara Learning</h3>
+					<p class="meta">January 2022 to present · Wellington</p>
+					<p>Leads design across Totara's learning platform, covering UX strategy, design systems, accessibility and design-to-code tooling. Leads a team of designers and researchers, and the move to an AI-first design practice.</p>
+					<ul class="points">
+						<li><strong>Initiated and led Inspire</strong>, a cross-team R&amp;D programme that shipped in Totara 19: a new default theme with side navigation, a task-based information architecture, a rebuilt catalogue, a single library and workspace overview, and correct page headings across the product. Wrote the business case, consulted 12 strategic partners, and steered platform, product, QA and documentation teams through three delivery increments.</li>
+						<li><strong>Shaped a layered design token architecture</strong> that lets the legacy LMS and the new multi-product app framework share one design system, with a build check that turns token gaps into build failures.</li>
+						<li><strong>Led an accessibility and dark-mode audit</strong> that produced a prioritised remediation register, including a focus-ring change across 21 components that raised contrast from about 2:1 to almost 5:1.</li>
+						<li><strong>Wrote a product health model</strong> that divides the platform into 25 owned capability areas, scores health and strategic importance separately, and runs a monthly AI-assisted review of customer demand and NPS.</li>
+						<li><strong>Restructured six years of scattered research notes</strong> into a directory that product managers now maintain: 408 entries since 2022, 97% of them added by 16 colleagues across product and R&amp;D.</li>
+						<li><strong>Moved the team to an AI-first practice</strong> that uses AI to measure design quality, including a tool that maps all 471 legacy global variables to the new token contract.</li>
+					</ul>
+				</div>
 
-<h2>Focus areas</h2>
-<ul class="inline-print">
-	<li>Design leadership and team building</li>
-	<li>Design systems and design token architecture</li>
-	<li>Discovery and research practice</li>
-	<li>Accessibility and WCAG conformance</li>
-	<li>AI-assisted design practice</li>
-	<li>Tooling that connects design to code</li>
-</ul>
+				<div class="role">
+					<h3>Silverstripe</h3>
+					<p class="meta">March 2010 to January 2022 · New Zealand</p>
 
-<h2>Education</h2>
-<p>Diploma of Graphic Design and Diploma of Web Development, Natcoll Design Technology (now Yoobee).</p>
+					<div class="subrole">
+						<p><strong>Lead Experience Designer for Product, 2016 to 2022.</strong> Led the user experience and design of the open-source Silverstripe CMS and Silverstripe Cloud, the company's hosting and deployment service.</p>
+						<ul class="points">
+							<li>Created the design system for Silverstripe CMS.</li>
+							<li>Designed and directed the Content Blocks feature, which increased developer engagement and open-source contributions.</li>
+							<li>Led the rebrand and sub-brands for Silverstripe Cloud.</li>
+						</ul>
+					</div>
+
+					<div class="subrole">
+						<p><strong>Design Manager, 2010 to 2016.</strong> Planned and resourced the design and front-end development team, and led a small UX team.</p>
+						<ul class="points">
+							<li>Created and launched Silverstripe Cloud, which grew in customers and revenue year on year.</li>
+							<li>Created and launched the NZ Government Common Web Platform with the Department of Internal Affairs and Revera: the hosting platform, its management tools and its website.</li>
+							<li>Integrated a front-end framework into Silverstripe CMS and rewrote its front-end code, making community contributions easier.</li>
+						</ul>
+					</div>
+
+					<div class="subrole">
+						<p><strong>Agency projects.</strong> Planned, consulted on and designed client websites, mostly for the public sector, and built the front ends for many of them. These included Metlink, Greater Wellington's journey planner; the Health Quality &amp; Safety Commission, bringing around ten health programmes with their own identities into one website; and Plunket.</p>
+					</div>
+				</div>
+
+				<div class="role earlier">
+					<h3>Earlier work</h3>
+					<p><strong>Web Developer and Designer, Blackbox Design, 2008 to 2011.</strong> Commercial work ranging from print design to building websites.</p>
+					<p><strong>Designer, Excel Media Group and HR Magazine Hong Kong, 2009.</strong> Brand creation, business publication redesign and layout design.</p>
+				</div>
+			</section>
+
+			<aside class="sidebar" aria-label="Contact, focus areas, case studies and education">
+				<section>
+					<h2>Contact</h2>
+					<ul>
+						<li>Wellington, New Zealand</li>
+						<li><span data-email>2paulclarke [at] gmail [dot] com</span></li>
+						<li><a href="https://paulclarke.nz/">paulclarke.nz</a></li>
+						<li><a href="https://www.linkedin.com/in/clarkepaul/">linkedin.com/in/clarkepaul</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Focus areas</h2>
+					<ul>
+						<li>Design leadership and team building</li>
+						<li>Design systems and design token architecture</li>
+						<li>Discovery and research practice</li>
+						<li>Accessibility and WCAG conformance</li>
+						<li>AI-assisted design practice</li>
+						<li>Tooling that connects design to code</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Case studies</h2>
+					<ul>
+						{%- for study in collections.caseStudies %}
+						<li><a href="{{ site.url }}{{ study.url }}">{{ study.data.heading }}</a></li>
+						{%- endfor %}
+					</ul>
+				</section>
+
+				<section>
+					<h2>Education</h2>
+					<p>Diploma of Graphic Design and Diploma of Web Development, Natcoll Design Technology (now Yoobee).</p>
+				</section>
+			</aside>
+
+		</div>
+	</article>
+</div>
