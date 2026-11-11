@@ -201,7 +201,7 @@ main > .section:last-child {
 	min-height: var(--header-height);
 	padding: var(--space-s) var(--gutter);
 	background: var(--color-page);
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 }
 
 .site-header__name {
@@ -286,8 +286,12 @@ main > .section:last-child {
 	margin-top: 0;
 }
 
+/* Meta line under a heading, such as a role's dates: small body text in the muted colour */
 .label--meta {
 	margin: 0 0 var(--space-xs);
+	font-family: var(--font-sans);
+	font-size: var(--text-small);
+	line-height: var(--leading-body);
 }
 
 /* Résumé: each role reads as one unit, with more space before its heading than after it */
