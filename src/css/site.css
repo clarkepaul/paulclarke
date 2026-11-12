@@ -595,14 +595,22 @@ main > .section:last-child {
 	list-style: none;
 }
 
-.stage-list li {
+.stage-list > li {
 	margin: 0;
 	padding: 0 0 var(--space-m) var(--space-m);
 	border-left: 2px solid var(--color-highlight);
 }
 
-.stage-list li:last-child {
+.stage-list > li:last-child {
 	padding-bottom: 0;
+}
+
+.stage-list ul {
+	margin: 0 0 var(--space-xs);
+}
+
+.stage-list ul li + li {
+	margin-top: var(--space-2xs);
 }
 
 .stage-list__title {

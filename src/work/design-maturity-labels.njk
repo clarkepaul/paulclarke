@@ -3,7 +3,7 @@ order: 6
 permalink: /case-study-design-maturity-labels.html
 heading: "Design maturity labels: saying what a design is for"
 title: "Design maturity labels: saying what a design is for — Paul Clarke"
-description: Five labels that tell engineers and stakeholders how settled a design is and what feedback helps, aligned with the quarterly Definition of Ready.
+description: Five labels that tell engineers and stakeholders how settled a design is and what feedback helps, aligned with the quarterly Definition of Ready and followed by guidance on who makes each design decision.
 summary: Five labels that tell engineers and stakeholders how settled a design is and what feedback helps.
 labels:
   - level: 1
@@ -37,6 +37,28 @@ readiness:
   - { stage: "3. Tested", confidence: "The direction reduces the biggest risks", level: 3 }
   - { stage: "4. Planned", confidence: "The team can build it safely", level: 4 }
   - { stage: "After ready", confidence: "Refinement during delivery", level: 5 }
+decisionLevels:
+  - title: "Level 1: Designer-led"
+    items:
+      - Applying design system guidance
+      - Refining layout, hierarchy and interactions
+      - Trade-offs within agreed scope
+    labelsItem: { text: "Moving work through", levels: [1, 2, 3] }
+    rule: Local, reversible and low risk, so go ahead.
+  - title: "Level 2: Align with the Head of Design"
+    items:
+      - Departing from the design system
+      - Being unsure whether to keep legacy behaviour
+      - Compromises that affect consistency or usability
+      - Pushing for design debt fixes during delivery
+    rule: Discuss it to reduce friction later. This is not an approval step.
+  - title: "Level 3: Shared decision"
+    items:
+      - New patterns or interaction models
+      - Precedent-setting work or accessibility risk
+      - Unresolved tension between design, engineering and product
+    labelsItem: { text: "Major changes to work labelled", levels: [3, 4, 5] }
+    rule: Too big for one designer to own alone, so bring it in early.
 ---
 {#- A label as designers apply it: the name, with a five-step meter showing how settled the work is -#}
 {%- macro tag(level) -%}
@@ -46,10 +68,10 @@ readiness:
 
 <h2>Context</h2>
 <p>A rough exploration and a build-ready flow looked much the same in a Figma link. Engineers built from early ideas, stakeholders gave pixel feedback on concepts, and finished work was reopened late in the quarter.</p>
-<p>I introduced five labels that designers attach to every design they share. Each one tells engineers and stakeholders how settled the work is and what kind of feedback helps. I aligned them with the quarterly Definition of Ready that product managers and I wrote, so a label shows where the work sits in planning as well as in design.</p>
+<p>I introduced five labels that designers attach to every design they share. Each one tells engineers and stakeholders how settled the work is and what kind of feedback helps. I aligned them with the quarterly Definition of Ready that product managers and I wrote, so a label shows where the work sits in planning as well as in design. Later, I added decision-making guidance that sets out which design decisions designers make alone and which need the Head of Design.</p>
 
 <h2>My role</h2>
-<p>As Head of Design, I wrote and own the labels. I introduced them as a trial in early 2026, working with product managers, engineering leads and architects. They apply to design files, tickets and shared links.</p>
+<p>As Head of Design, I wrote and own the labels and the decision guidance. I introduced the labels as a trial in early 2026 and the decision guidance in mid 2026, working with product managers, engineering leads and architects. The labels apply to design files, tickets and shared links.</p>
 
 <h2>The problem</h2>
 <p>Every design looked equally final, and the words we had made it worse.</p>
@@ -122,17 +144,54 @@ readiness:
 </div>
 <p>Both aim to prevent the same problems: late feedback that causes major rework, unclear decision boundaries that send every choice for approval, and teams working around missing design direction.</p>
 
+<h2>Who decides</h2>
+<p>Once the labels made status clear, the next source of friction was who decides. Designers were unsure when they could act alone, and some decisions came to me for approval while others came too late. I wrote short guidance with three levels, tied to the same labels, with one principle throughout: default to autonomy and raise tension early.</p>
+<ol class="stage-list">
+	{%- for level in decisionLevels %}
+	<li>
+		<h3 class="stage-list__title">{{ level.title }}</h3>
+		<ul>
+			{%- for item in level.items %}
+			<li>{{ item }}</li>
+			{%- endfor %}
+			{%- if level.labelsItem %}
+			<li>{{ level.labelsItem.text }} {% for l in level.labelsItem.levels %}{{ tag(l) }} {% endfor %}</li>
+			{%- endif %}
+		</ul>
+		<p><strong>{{ level.rule }}</strong></p>
+	</li>
+	{%- endfor %}
+</ol>
+<p>Each request also names the kind of involvement it needs:</p>
+<dl class="term-list">
+	<div>
+		<dt>FYI</dt>
+		<dd>Visibility only.</dd>
+	</div>
+	<div>
+		<dt>Alignment</dt>
+		<dd>Discussion and guidance.</dd>
+	</div>
+	<div>
+		<dt>Decision required</dt>
+		<dd>A shared or escalated decision.</dd>
+	</div>
+</dl>
+<p>Naming the kind of involvement was as useful as the levels. Designers could bring work to me without it becoming an approval gate, and it was clear when a decision really was shared. Together the three tools answer different questions: the labels say how settled a design is, the Definition of Ready says how ready the work is, and the levels say who decides.</p>
+
 <h2>Outcome</h2>
 <ul>
 	<li><strong>Sign-off became easier.</strong> Stakeholders knew what they were being asked to approve, and when, so reviews converged faster.</li>
 	<li><strong>Better feedback at each stage.</strong> Engineers raised feasibility on proposed work instead of discovering it during the build, and concepts stopped attracting pixel critique.</li>
 	<li><strong>Shared language with product.</strong> The labels became part of the Definition of Ready, so product managers and designers use the same terms to describe how ready a piece of work is.</li>
 	<li><strong>More trust with engineering.</strong> “For development” meant one thing, so teams could start work without second-guessing the design.</li>
+	<li><strong>Less friction over decisions.</strong> Designers had clear room to act alone, and contentious calls reached me early and in the open, not as late escalations.</li>
 </ul>
 
 <h2>Reflection</h2>
-<p>The value comes from everyone using the same five words, so I would keep the set small and add a label only with the team’s agreement. Two things I would refine:</p>
+<p>The value comes from everyone using the same five words, so I would keep the set small and add a label only with the team’s agreement. Three things I would refine:</p>
 <ul>
 	<li><strong>Separate confidence from stage.</strong> “Proposed” covers both early convergence and research-backed work. I drafted a confidence marker, directional or high confidence, to show validation without adding another stage.</li>
+	<li><strong>Watch for levels becoming gates.</strong> Escalation guidance can turn into approval-seeking. I would check with designers that Level 2 still feels like a conversation.</li>
 	<li><strong>Measure the rework.</strong> Tracking late-quarter design changes before and after would turn “easier” into a number.</li>
 </ul>
