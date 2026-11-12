@@ -535,6 +535,179 @@ main > .section:last-child {
 	font-size: var(--text-small);
 }
 
+/* Maturity label: a design's label as designers apply it, with a five-step meter of how settled it is */
+.maturity {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.15em 0.6em;
+	border: 1.5px solid currentColor;
+	border-radius: 3px;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	letter-spacing: 0.06em;
+	line-height: 1.4;
+	text-transform: uppercase;
+	white-space: nowrap;
+	vertical-align: 0.1em;
+}
+
+.maturity__meter {
+	display: inline-flex;
+	gap: 2px;
+}
+
+.maturity__meter span {
+	width: 0.45em;
+	height: 0.8em;
+	border: 1px solid var(--color-muted);
+}
+
+.maturity__meter .is-on {
+	border-color: var(--color-highlight);
+	background: var(--color-highlight);
+}
+
+/* Terms defined in a short list: each term in the display face, its meaning below */
+.term-list {
+	margin: 0 0 1.444em;
+}
+
+.term-list div {
+	padding: var(--space-s) 0;
+	border-top: 1px solid var(--color-muted);
+}
+
+.term-list dt {
+	font-family: var(--font-display);
+	font-size: 1.25rem;
+}
+
+.term-list dd {
+	margin: 0;
+	color: var(--color-muted);
+}
+
+/* A numbered sequence of stages, joined by a line down the left */
+.stage-list {
+	margin: 0 0 1.444em;
+	padding: 0;
+	list-style: none;
+}
+
+.stage-list li {
+	margin: 0;
+	padding: 0 0 var(--space-m) var(--space-m);
+	border-left: 2px solid var(--color-highlight);
+}
+
+.stage-list li:last-child {
+	padding-bottom: 0;
+}
+
+.stage-list__title {
+	margin: var(--space-xs) 0 var(--space-2xs);
+	font-size: 1.25rem;
+}
+
+.stage-list p {
+	margin: 0 0 var(--space-2xs);
+}
+
+.stage-list__feedback {
+	color: var(--color-muted);
+}
+
+/* Example: a small framed illustration of something in use, with a mono caption above */
+.example {
+	margin: 0 0 var(--space-m);
+}
+
+.example figcaption {
+	margin-bottom: var(--space-xs);
+	color: var(--color-muted);
+	font-family: var(--font-mono);
+	font-size: var(--text-small);
+}
+
+.example__frame,
+.example__cover {
+	padding: var(--space-s);
+	border: 1px solid var(--color-muted);
+	border-radius: 6px;
+	background: var(--color-surface);
+}
+
+.example__frame p:last-child {
+	margin-bottom: 0;
+}
+
+.example__frame--mono {
+	font-family: var(--font-mono);
+	font-size: var(--text-small);
+	overflow-wrap: anywhere;
+}
+
+.example__frame--mono p {
+	margin-bottom: var(--space-2xs);
+}
+
+.example__cover {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	max-width: 22rem;
+	aspect-ratio: 16 / 9;
+}
+
+.example__cover-title {
+	font-family: var(--font-display);
+	font-size: 1.25rem;
+}
+
+.note {
+	color: var(--color-muted);
+	font-size: var(--text-small);
+}
+
+/* Data table: scrolls sideways on its own on narrow screens rather than widening the page */
+.table-scroll {
+	margin: 0 0 1.444em;
+	overflow-x: auto;
+}
+
+.table-scroll:focus-visible {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 3px;
+}
+
+.data-table {
+	width: 100%;
+	min-width: 32rem;
+	border-collapse: collapse;
+	font-size: var(--text-small);
+}
+
+.data-table th,
+.data-table td {
+	padding: var(--space-xs) var(--space-s) var(--space-xs) 0;
+	border-bottom: 1px solid var(--color-muted);
+	text-align: left;
+	vertical-align: top;
+}
+
+.data-table thead th {
+	color: var(--color-muted);
+	font-family: var(--font-mono);
+	font-weight: 400;
+}
+
+.data-table tbody th {
+	font-weight: 500;
+	white-space: nowrap;
+}
+
 /* Contact links */
 .link-list {
 	padding: 0;

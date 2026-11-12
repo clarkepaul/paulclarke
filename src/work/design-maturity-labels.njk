@@ -1,0 +1,138 @@
+---
+order: 6
+permalink: /case-study-design-maturity-labels.html
+heading: "Design maturity labels: saying what a design is for"
+title: "Design maturity labels: saying what a design is for — Paul Clarke"
+description: Five labels that tell engineers and stakeholders how settled a design is and what feedback helps, aligned with the quarterly Definition of Ready.
+summary: Five labels that tell engineers and stakeholders how settled a design is and what feedback helps.
+labels:
+  - level: 1
+    name: Discovery
+    stage: Before design
+    about: A playground of research and ideas, kept separate from design direction.
+    feedback: What we have missed.
+  - level: 2
+    name: Concept
+    stage: Exploring
+    about: Several possible directions. Not ready to build, and major changes are expected.
+    feedback: Is this the right direction? What are the obvious risks?
+  - level: 3
+    name: Proposed
+    stage: Converged
+    about: A considered solution. Core decisions are intentional, and some constraints are still open.
+    feedback: Feasibility, edge cases and other ways to build it.
+  - level: 4
+    name: For development
+    stage: Source of truth
+    about: What should be built. Open questions are called out explicitly.
+    feedback: Missing states, implementation risk and accessibility.
+  - level: 5
+    name: Production
+    stage: Refined
+    about: Detailed design for high-impact work. Any departure from it should be deliberate.
+    feedback: Deviations to discuss before shipping.
+readiness:
+  - { stage: "1. Defined", confidence: "We are solving the right problem", level: 1 }
+  - { stage: "2. Scoped", confidence: "We are solving it in the right way", level: 2 }
+  - { stage: "3. Tested", confidence: "The direction reduces the biggest risks", level: 3 }
+  - { stage: "4. Planned", confidence: "The team can build it safely", level: 4 }
+  - { stage: "After ready", confidence: "Refinement during delivery", level: 5 }
+---
+{#- A label as designers apply it: the name, with a five-step meter showing how settled the work is -#}
+{%- macro tag(level) -%}
+{%- set item = labels[level - 1] -%}
+<span class="maturity"><span class="maturity__meter" aria-hidden="true">{% for i in range(1, 6) %}<span{% if i <= level %} class="is-on"{% endif %}></span>{% endfor %}</span>{{ item.name }}</span>
+{%- endmacro %}
+
+<h2>Context</h2>
+<p>A rough exploration and a build-ready flow looked much the same in a Figma link. Engineers built from early ideas, stakeholders gave pixel feedback on concepts, and finished work was reopened late in the quarter.</p>
+<p>I introduced five labels that designers attach to every design they share. Each one tells engineers and stakeholders how settled the work is and what kind of feedback helps. I aligned them with the quarterly Definition of Ready that product managers and I wrote, so a label shows where the work sits in planning as well as in design.</p>
+
+<h2>My role</h2>
+<p>As Head of Design, I wrote and own the labels. I introduced them as a trial in early 2026, working with product managers, engineering leads and architects. They apply to design files, tickets and shared links.</p>
+
+<h2>The problem</h2>
+<p>Every design looked equally final, and the words we had made it worse.</p>
+<dl class="term-list">
+	<div>
+		<dt>“Final” or “signed off”</dt>
+		<dd>Sounds frozen and unquestionable, so people stop raising real risks.</dd>
+	</div>
+	<div>
+		<dt>“Mockup”</dt>
+		<dd>Sounds disposable, so careful decisions get overridden.</dd>
+	</div>
+	<div>
+		<dt>“Wireframe”</dt>
+		<dd>Is often ignored entirely, so early direction never gets challenged.</dd>
+	</div>
+</dl>
+
+<h2>The labels</h2>
+<p>The labels describe intent and confidence, not visual polish or rank. Each one sets expectations on both sides: what the team can assume, and which feedback is useful now.</p>
+<ol class="stage-list">
+	{%- for item in labels %}
+	<li>
+		{{ tag(item.level) }}
+		<h3 class="stage-list__title">{{ item.stage }}</h3>
+		<p>{{ item.about }}</p>
+		<p class="stage-list__feedback"><strong>Useful feedback:</strong> {{ item.feedback }}</p>
+	</li>
+	{%- endfor %}
+</ol>
+<p>Production design is not always needed. It is for features where the experience is critical to success, heavily used or heavily marketed. Designers re-label work as it matures, and add a short sentence when a label alone does not say enough, such as “Open to feasibility feedback”.</p>
+
+<h2>In practice</h2>
+<p>Each design or set of designs carries exactly one label, in three places, so the context travels with every link.</p>
+<figure class="example">
+	<figcaption>Design file cover</figcaption>
+	<div class="example__cover">
+		{{ tag(3) }}
+		<span class="example__cover-title">Certification renewal flow</span>
+	</div>
+</figure>
+<figure class="example">
+	<figcaption>File and page names</figcaption>
+	<div class="example__frame example__frame--mono">
+		<p>[PROPOSED] Certification renewal flow</p>
+		<p>[FOR DEVELOPMENT] Course status block</p>
+	</div>
+</figure>
+<figure class="example">
+	<figcaption>Ticket or chat message</figcaption>
+	<div class="example__frame">
+		<p><strong>Designer:</strong> Renewal flow is {{ tag(3) }}. Core behaviour is set; open to feasibility feedback on the bulk action.</p>
+	</div>
+</figure>
+<p class="note">These examples are illustrative, and the feature names are placeholders.</p>
+
+<h2>Aligned with the Definition of Ready</h2>
+<p>At the same time, I worked with product managers on an R&amp;D quarterly Definition of Ready. It describes how product, design and engineering trios prepare work a quarter ahead, in four stages of growing confidence. I added the design view to each stage, so each label is a visible signal of how ready the work is.</p>
+<div class="table-scroll" role="region" aria-label="Readiness stages and design labels" tabindex="0">
+	<table class="data-table">
+		<thead>
+			<tr><th scope="col">Readiness stage</th><th scope="col">Confidence the team needs</th><th scope="col">Design label</th></tr>
+		</thead>
+		<tbody>
+			{%- for row in readiness %}
+			<tr><th scope="row">{{ row.stage }}</th><td>{{ row.confidence }}</td><td>{{ tag(row.level) }}</td></tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+</div>
+<p>Both aim to prevent the same problems: late feedback that causes major rework, unclear decision boundaries that send every choice for approval, and teams working around missing design direction.</p>
+
+<h2>Outcome</h2>
+<ul>
+	<li><strong>Sign-off became easier.</strong> Stakeholders knew what they were being asked to approve, and when, so reviews converged faster.</li>
+	<li><strong>Better feedback at each stage.</strong> Engineers raised feasibility on proposed work instead of discovering it during the build, and concepts stopped attracting pixel critique.</li>
+	<li><strong>Shared language with product.</strong> The labels became part of the Definition of Ready, so product managers and designers use the same terms to describe how ready a piece of work is.</li>
+	<li><strong>More trust with engineering.</strong> “For development” meant one thing, so teams could start work without second-guessing the design.</li>
+</ul>
+
+<h2>Reflection</h2>
+<p>The value comes from everyone using the same five words, so I would keep the set small and add a label only with the team’s agreement. Two things I would refine:</p>
+<ul>
+	<li><strong>Separate confidence from stage.</strong> “Proposed” covers both early convergence and research-backed work. I drafted a confidence marker, directional or high confidence, to show validation without adding another stage.</li>
+	<li><strong>Measure the rework.</strong> Tracking late-quarter design changes before and after would turn “easier” into a number.</li>
+</ul>
