@@ -13,7 +13,7 @@ A small design team supports a large learning platform, a new multi-product plat
 
 ## My role
 
-I lead the transition plan for the practice, and I run the shared AI design system tooling used by design and development across the organisation.
+I lead the transition from the legacy design system to the new one, and I look at how AI can change the way the design team works. I also run the shared AI design system tooling used by design and development across the organisation.
 
 ## The problem
 
@@ -21,7 +21,7 @@ Design review does not scale to the speed of AI-generated work. If quality depen
 
 ## Key decisions
 
-- **Measure before automating.** I started with a baseline rather than a tool. The plan sets three foundational checks: a comparison of the token source, Figma variables, and published CSS; visual regression; and automated accessibility testing.
+- **Measure before automating.** I started with a baseline rather than a tool. The transition plan sets three foundational checks: a comparison of the token source, Figma variables, and published CSS; visual regression; and automated accessibility testing.
 - **Use AI for analysis, not only for generation.** The first results came from AI-assisted analysis of the codebase rather than from generating interfaces. This work is less visible, but it gives the whole practice something to improve against.
 - **Keep a person in the loop.** Every analysis states that it is AI-assisted and must be verified before anyone acts on it. AI proposes candidates, and design makes the decision.
 - **Enable the team to build its own tools.** The most useful tooling came from a team member using AI to build what the work needed, rather than from a product we bought. My role was to set the problem and the standard of evidence, and to make room for that work.
