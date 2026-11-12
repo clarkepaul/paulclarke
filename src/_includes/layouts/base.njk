@@ -5,6 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ title }}</title>
 	<meta name="description" content="{{ description }}">
+	<script>
+	  // Apply a saved theme before the page paints, so a dark choice never flashes light. See js/theme.js.
+	  try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+	</script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,19 +47,27 @@
 
 	<header class="site-header">
 		<a class="site-header__name" href="/">{{ site.name }}</a>
-		<nav class="site-nav" aria-label="Main">
-			<ul>
-				{%- for item in site.nav %}
-				<li><a href="{{ item.url }}"{% if item.key == navKey %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
-				{%- endfor %}
-			</ul>
-		</nav>
+		<div class="site-header__end">
+			<nav class="site-nav" aria-label="Main">
+				<ul>
+					{%- for item in site.nav %}
+					<li><a href="{{ item.url }}"{% if item.key == navKey %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+					{%- endfor %}
+				</ul>
+			</nav>
+			<button class="theme-toggle" type="button" aria-pressed="false" hidden>
+				<span class="visually-hidden">Dark mode</span>
+				{% icon "moon" %}
+				{% icon "sun" %}
+			</button>
+		</div>
 	</header>
 
 	<main id="main">
 		{{ content | safe }}
 	</main>
 
+	<script src="/js/theme.js"></script>
 	{%- if hasEmail %}
 	<script src="/js/email.js"></script>
 	{%- endif %}

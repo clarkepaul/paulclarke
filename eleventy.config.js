@@ -1,3 +1,10 @@
+import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
+
+const lucideIcons = join(dirname(createRequire(import.meta.url).resolve("lucide-static/package.json")), "icons");
+const iconCache = new Map();
+
 export default function (eleventyConfig) {
 	// Files copied as they are
 	eleventyConfig.addPassthroughCopy({ "src/css": "css" });
@@ -37,6 +44,22 @@ export default function (eleventyConfig) {
 			.map((s, i) => `<li><span class="chart__swatch chart__swatch--${i + 1}" aria-hidden="true"></span>${s.label}: <strong>${s.value}</strong></li>`)
 			.join("");
 		return `<figure class="chart"><svg class="chart__bar" viewBox="0 0 ${total} 40" role="img" aria-label="Stacked bar of ${total} ${subject}: ${description}.">${rects}</svg><ul class="chart__legend">${legend}</ul><figcaption>${caption}</figcaption></figure>`;
+	});
+
+	// Lucide icon, inlined as decorative SVG: {% icon "download" %} or {% icon "download", "extra-class" %}.
+	// Browse names at https://lucide.dev/icons. The icon takes the text colour and is sized by .icon in site.css.
+	eleventyConfig.addShortcode("icon", (name, className = "") => {
+		if (!iconCache.has(name)) {
+			const svg = readFileSync(join(lucideIcons, `${name}.svg`), "utf8")
+				.replace(/<!--[\s\S]*?-->/, "")
+				.replace(/\s*(class|width|height)="[^"]*"/g, "")
+				.replace(/\s+/g, " ")
+				.replace(/> </g, "><")
+				.trim();
+			iconCache.set(name, svg);
+		}
+		const classes = ["icon", `icon--${name}`, className].filter(Boolean).join(" ");
+		return iconCache.get(name).replace("<svg", `<svg class="${classes}" aria-hidden="true" focusable="false"`);
 	});
 
 	return {

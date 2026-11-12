@@ -28,5 +28,6 @@ This builds the site, prints `/resume.html` in Chrome with print styles (A4, no 
 - `src/work/` holds the case studies as Markdown. To add one, copy `case-study-template.md`, then set its `permalink`, `order` and text. It appears on the Work page and homepage automatically.
 - `src/_data/` holds the site name and navigation, social links and blog posts.
 - `src/images/` and `src/favicons/` are copied as they are.
+- Icons come from [Lucide](https://lucide.dev/icons). In a template, `{% icon "download" %}` inlines one as decorative SVG in the text colour.
 
 Files outside `src/`, such as the InDesign résumé, are not published.
