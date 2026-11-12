@@ -2,6 +2,7 @@
 	"name": "Paul Clarke",
 	"url": "https://paulclarke.nz",
 	"analyticsId": "G-PQ7V101BTR",
+	"totaraEnd": "MONTH 2026",
 	"nav": [
 		{ "key": "work", "url": "/work.html", "label": "Work" },
 		{ "key": "about", "url": "/about.html", "label": "About" },
