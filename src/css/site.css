@@ -62,6 +62,54 @@
 	}
 }
 
+/* Dark theme
+   Follows the system setting unless the visitor picks a theme with the header toggle,
+   which sets data-theme on <html>. The two blocks below hold the same values: keep them in step.
+   Screen only, so printing always uses the light colours. */
+:root {
+	color-scheme: light;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		color-scheme: dark;
+		--color-page: #161a17;
+		--color-surface: #1f2420;
+		--color-text: #ebe5d9;
+		--color-ink: #ebe5d9;
+		--color-muted: #a5a69c;
+		--color-focus: #ebe5d9;
+		--color-veil: rgb(22 26 23 / 0.5);
+		--color-highlight: #9fb54a;
+		--color-strong: #ffffff;
+		--color-series-1: #ebe5d9;
+		--color-series-2: #a5a69c;
+		--color-series-3: #6b6f69;
+		--color-series-4: #161a17;
+		--color-series-stroke: #a5a69c;
+	}
+}
+
+@media screen {
+	:root[data-theme="dark"] {
+		color-scheme: dark;
+		--color-page: #161a17;
+		--color-surface: #1f2420;
+		--color-text: #ebe5d9;
+		--color-ink: #ebe5d9;
+		--color-muted: #a5a69c;
+		--color-focus: #ebe5d9;
+		--color-veil: rgb(22 26 23 / 0.5);
+		--color-highlight: #9fb54a;
+		--color-strong: #ffffff;
+		--color-series-1: #ebe5d9;
+		--color-series-2: #a5a69c;
+		--color-series-3: #6b6f69;
+		--color-series-4: #161a17;
+		--color-series-stroke: #a5a69c;
+	}
+}
+
 /* Base
    -------------------------------------------------------------------------- */
 *,
@@ -172,6 +220,25 @@ main > .section:last-child {
 /* Components
    -------------------------------------------------------------------------- */
 
+/* Icons (Lucide, via the icon shortcode): sized to the text, coloured by it */
+.icon {
+	display: inline-block;
+	flex-shrink: 0;
+	width: 1.1em;
+	height: 1.1em;
+	vertical-align: -0.2em;
+}
+
+/* Hidden visually, still read by screen readers */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
 /* Skip link */
 .skip-link {
 	position: absolute;
@@ -241,7 +308,6 @@ main > .section:last-child {
 	bottom: -0.2em;
 	width: 0;
 	height: 0.2em;
-	border-radius: 3px 3px 0 0;
 	background: var(--color-highlight);
 	transition: width 0.3s ease;
 }
@@ -268,6 +334,57 @@ main > .section:last-child {
 
 @media (min-width: 768px) {
 	.site-nav ul {
+		gap: var(--space-l);
+	}
+}
+
+/* Theme toggle: shown by theme.js, so visitors without JavaScript just follow their system setting */
+.site-header__end {
+	display: flex;
+	align-items: center;
+	gap: var(--space-m);
+}
+
+.theme-toggle {
+	display: inline-grid;
+	place-items: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	margin: -0.5rem -0.5rem -0.5rem 0;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: none;
+	color: var(--color-muted);
+	cursor: pointer;
+}
+
+.theme-toggle[hidden] {
+	display: none;
+}
+
+.theme-toggle:hover {
+	color: var(--color-ink);
+}
+
+.theme-toggle:focus-visible {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+}
+
+.theme-toggle .icon {
+	width: 1.1rem;
+	height: 1.1rem;
+}
+
+/* Moon offers dark; sun offers light */
+.theme-toggle[aria-pressed="true"] .icon--moon,
+.theme-toggle[aria-pressed="false"] .icon--sun {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.site-header__end {
 		gap: var(--space-l);
 	}
 }

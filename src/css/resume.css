@@ -26,6 +26,28 @@
 	--gutter: 9mm;
 }
 
+/* Dark theme, matching site.css: system setting unless data-theme is set. Screen only, so the PDF stays light.
+   The two blocks hold the same values: keep them in step. */
+@media screen and (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) .cv {
+		--ink: #ebe5d9;
+		--ink-soft: #a5a69c;
+		--accent: #8fb9df;
+		--rule: #3a413c;
+		--paper: var(--color-surface);
+	}
+}
+
+@media screen {
+	:root[data-theme="dark"] .cv {
+		--ink: #ebe5d9;
+		--ink-soft: #a5a69c;
+		--accent: #8fb9df;
+		--rule: #3a413c;
+		--paper: var(--color-surface);
+	}
+}
+
 /* Base */
 .cv {
 	padding: 24px 12px;
@@ -97,9 +119,22 @@
 	font: 400 var(--size-lede)/1.4 var(--serif);
 }
 
+/* Download link: top right of the sheet, centred on the heading's line */
+.cv .sheet {
+	position: relative;
+}
+
 .cv .cv-download {
-	margin-top: 4mm;
+	position: absolute;
+	top: calc(16mm + 7pt);
+	right: 18mm;
 	font-weight: 600;
+}
+
+.cv .cv-download a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
 }
 
 /* Two columns. Experience comes first in the source; grid puts the sidebar on the left. */
@@ -207,6 +242,19 @@
 	.cv .sheet {
 		padding: 28px 20px;
 		box-shadow: none;
+	}
+
+	.cv .cv-download {
+		top: calc(28px + 7pt);
+		right: 20px;
+	}
+}
+
+/* Very narrow screens: no room beside the heading, so the link sits under the summary */
+@media (max-width: 380px) {
+	.cv .cv-download {
+		position: static;
+		margin-top: 4mm;
 	}
 
 	.cv .layout {
