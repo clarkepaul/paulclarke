@@ -13,8 +13,8 @@
 	--color-ink: #202a24;
 	--color-muted: #666666;
 	--color-focus: #202a24;
-	--color-veil: rgb(255 255 255 / 0.5);
 	--color-highlight: #7c942e; /* olive green, 3.1:1 on the page colour */
+	--color-mark: color-mix(in srgb, var(--color-highlight) 30%, var(--color-page)); /* highlighter tint behind key words */
 	--color-strong: #000000;
 
 	/* Chart series, darkest to lightest */
@@ -47,7 +47,7 @@
 	--space-m: 1.667rem;
 	--space-l: 3rem;
 	--space-xl: 4.444rem;
-	--space-hero: 10rem;
+	--space-hero: 4rem;
 
 	/* Layout */
 	--page-max: 1500px;
@@ -79,8 +79,8 @@
 		--color-ink: #ebe5d9;
 		--color-muted: #a5a69c;
 		--color-focus: #ebe5d9;
-		--color-veil: rgb(22 26 23 / 0.5);
 		--color-highlight: #9fb54a;
+		--color-mark: color-mix(in srgb, #9fb54a 28%, #161a17);
 		--color-strong: #ffffff;
 		--color-series-1: #ebe5d9;
 		--color-series-2: #a5a69c;
@@ -99,8 +99,8 @@
 		--color-ink: #ebe5d9;
 		--color-muted: #a5a69c;
 		--color-focus: #ebe5d9;
-		--color-veil: rgb(22 26 23 / 0.5);
 		--color-highlight: #9fb54a;
+		--color-mark: color-mix(in srgb, #9fb54a 28%, #161a17);
 		--color-strong: #ffffff;
 		--color-series-1: #ebe5d9;
 		--color-series-2: #a5a69c;
@@ -412,7 +412,7 @@ main > .section:last-child {
 	line-height: var(--leading-body);
 }
 
-/* Hero: the heading overlaps the portrait from tablet up */
+/* Hero: heading beside the portrait from tablet up, stacked above it on small screens */
 .hero {
 	display: grid;
 	max-width: var(--page-max);
@@ -423,14 +423,17 @@ main > .section:last-child {
 .hero__text {
 	position: relative;
 	z-index: 1;
-	margin-bottom: var(--space-xl);
+	margin-bottom: var(--space-m);
 }
 
-.hero__veil {
-	background-color: var(--color-veil);
+/* Key words in the hero: a highlighter stroke behind the lower part of the word, in a tint of the
+   highlight colour. Upright and the same colour as the heading, so it does not read as a link. */
+.hero__mark {
+	font-style: normal;
+	background-image: linear-gradient(transparent 58%, var(--color-mark) 58%, var(--color-mark) 92%, transparent 92%);
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
-	padding: 0 0.1em;
+	padding-inline: 0.06em;
 }
 
 .hero__image img {
@@ -443,10 +446,10 @@ main > .section:last-child {
 	}
 
 	.hero__text {
-		grid-column: 2 / span 7;
+		grid-column: 2 / span 6; /* stops at the portrait's edge, so the heading never sits on the photo */
 		grid-row: 1;
 		margin-bottom: 0;
-		padding-top: 7.2rem;
+		padding-top: 1.2rem;
 	}
 
 	.hero__image {
