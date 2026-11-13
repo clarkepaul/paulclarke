@@ -13,8 +13,8 @@
 	--color-ink: #202a24;
 	--color-muted: #666666;
 	--color-focus: #202a24;
-	--color-veil: rgb(255 255 255 / 0.5);
 	--color-highlight: #7c942e; /* olive green, 3.1:1 on the page colour */
+	--color-mark: color-mix(in srgb, var(--color-highlight) 30%, var(--color-page)); /* highlighter tint behind key words */
 	--color-strong: #000000;
 
 	/* Chart series, darkest to lightest */
@@ -47,7 +47,7 @@
 	--space-m: 1.667rem;
 	--space-l: 3rem;
 	--space-xl: 4.444rem;
-	--space-hero: 10rem;
+	--space-hero: 4rem;
 
 	/* Layout */
 	--page-max: 1500px;
@@ -79,8 +79,8 @@
 		--color-ink: #ebe5d9;
 		--color-muted: #a5a69c;
 		--color-focus: #ebe5d9;
-		--color-veil: rgb(22 26 23 / 0.5);
 		--color-highlight: #9fb54a;
+		--color-mark: color-mix(in srgb, #9fb54a 28%, #161a17);
 		--color-strong: #ffffff;
 		--color-series-1: #ebe5d9;
 		--color-series-2: #a5a69c;
@@ -99,8 +99,8 @@
 		--color-ink: #ebe5d9;
 		--color-muted: #a5a69c;
 		--color-focus: #ebe5d9;
-		--color-veil: rgb(22 26 23 / 0.5);
 		--color-highlight: #9fb54a;
+		--color-mark: color-mix(in srgb, #9fb54a 28%, #161a17);
 		--color-strong: #ffffff;
 		--color-series-1: #ebe5d9;
 		--color-series-2: #a5a69c;
@@ -412,7 +412,7 @@ main > .section:last-child {
 	line-height: var(--leading-body);
 }
 
-/* Hero: the heading overlaps the portrait from tablet up */
+/* Hero: heading beside the portrait from tablet up, stacked above it on small screens */
 .hero {
 	display: grid;
 	max-width: var(--page-max);
@@ -423,14 +423,17 @@ main > .section:last-child {
 .hero__text {
 	position: relative;
 	z-index: 1;
-	margin-bottom: var(--space-xl);
+	margin-bottom: var(--space-m);
 }
 
-.hero__veil {
-	background-color: var(--color-veil);
+/* Key words in the hero: a highlighter stroke behind the lower part of the word, in a tint of the
+   highlight colour. Upright and the same colour as the heading, so it does not read as a link. */
+.hero__mark {
+	font-style: normal;
+	background-image: linear-gradient(transparent 58%, var(--color-mark) 58%, var(--color-mark) 92%, transparent 92%);
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
-	padding: 0 0.1em;
+	padding-inline: 0.06em;
 }
 
 .hero__image img {
@@ -443,10 +446,10 @@ main > .section:last-child {
 	}
 
 	.hero__text {
-		grid-column: 2 / span 7;
+		grid-column: 2 / span 6; /* stops at the portrait's edge, so the heading never sits on the photo */
 		grid-row: 1;
 		margin-bottom: 0;
-		padding-top: 7.2rem;
+		padding-top: 1.2rem;
 	}
 
 	.hero__image {
@@ -533,6 +536,187 @@ main > .section:last-child {
 .chart figcaption {
 	color: var(--color-muted);
 	font-size: var(--text-small);
+}
+
+/* Maturity label: a design's label as designers apply it, with a five-step meter of how settled it is */
+.maturity {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.15em 0.6em;
+	border: 1.5px solid currentColor;
+	border-radius: 3px;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	letter-spacing: 0.06em;
+	line-height: 1.4;
+	text-transform: uppercase;
+	white-space: nowrap;
+	vertical-align: 0.1em;
+}
+
+.maturity__meter {
+	display: inline-flex;
+	gap: 2px;
+}
+
+.maturity__meter span {
+	width: 0.45em;
+	height: 0.8em;
+	border: 1px solid var(--color-muted);
+}
+
+.maturity__meter .is-on {
+	border-color: var(--color-highlight);
+	background: var(--color-highlight);
+}
+
+/* Terms defined in a short list: each term in the display face, its meaning below */
+.term-list {
+	margin: 0 0 1.444em;
+}
+
+.term-list div {
+	padding: var(--space-s) 0;
+	border-top: 1px solid var(--color-muted);
+}
+
+.term-list dt {
+	font-family: var(--font-display);
+	font-size: 1.25rem;
+}
+
+.term-list dd {
+	margin: 0;
+	color: var(--color-muted);
+}
+
+/* A numbered sequence of stages, joined by a line down the left */
+.stage-list {
+	margin: 0 0 1.444em;
+	padding: 0;
+	list-style: none;
+}
+
+.stage-list > li {
+	margin: 0;
+	padding: 0 0 var(--space-m) var(--space-m);
+	border-left: 2px solid var(--color-highlight);
+}
+
+.stage-list > li:last-child {
+	padding-bottom: 0;
+}
+
+.stage-list ul {
+	margin: 0 0 var(--space-xs);
+}
+
+.stage-list ul li + li {
+	margin-top: var(--space-2xs);
+}
+
+.stage-list__title {
+	margin: var(--space-xs) 0 var(--space-2xs);
+	font-size: 1.25rem;
+}
+
+.stage-list p {
+	margin: 0 0 var(--space-2xs);
+}
+
+.stage-list__feedback {
+	color: var(--color-muted);
+}
+
+/* Example: a small framed illustration of something in use, with a mono caption above */
+.example {
+	margin: 0 0 var(--space-m);
+}
+
+.example figcaption {
+	margin-bottom: var(--space-xs);
+	color: var(--color-muted);
+	font-family: var(--font-mono);
+	font-size: var(--text-small);
+}
+
+.example__frame,
+.example__cover {
+	padding: var(--space-s);
+	border: 1px solid var(--color-muted);
+	border-radius: 6px;
+	background: var(--color-surface);
+}
+
+.example__frame p:last-child {
+	margin-bottom: 0;
+}
+
+.example__frame--mono {
+	font-family: var(--font-mono);
+	font-size: var(--text-small);
+	overflow-wrap: anywhere;
+}
+
+.example__frame--mono p {
+	margin-bottom: var(--space-2xs);
+}
+
+.example__cover {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	max-width: 22rem;
+	aspect-ratio: 16 / 9;
+}
+
+.example__cover-title {
+	font-family: var(--font-display);
+	font-size: 1.25rem;
+}
+
+.note {
+	color: var(--color-muted);
+	font-size: var(--text-small);
+}
+
+/* Data table: scrolls sideways on its own on narrow screens rather than widening the page */
+.table-scroll {
+	margin: 0 0 1.444em;
+	overflow-x: auto;
+}
+
+.table-scroll:focus-visible {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 3px;
+}
+
+.data-table {
+	width: 100%;
+	min-width: 32rem;
+	border-collapse: collapse;
+	font-size: var(--text-small);
+}
+
+.data-table th,
+.data-table td {
+	padding: var(--space-xs) var(--space-s) var(--space-xs) 0;
+	border-bottom: 1px solid var(--color-muted);
+	text-align: left;
+	vertical-align: top;
+}
+
+.data-table thead th {
+	color: var(--color-muted);
+	font-family: var(--font-mono);
+	font-weight: 400;
+}
+
+.data-table tbody th {
+	font-weight: 500;
+	white-space: nowrap;
 }
 
 /* Contact links */
