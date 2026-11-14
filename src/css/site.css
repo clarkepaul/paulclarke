@@ -272,10 +272,19 @@ main > .section:last-child {
 }
 
 .site-header__name {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
 	color: var(--color-ink);
 	font-size: var(--text-label);
 	line-height: 1;
 	text-decoration: none;
+}
+
+.site-header__mark {
+	width: 1.4em;
+	height: 1.4em;
+	fill: currentColor;
 }
 
 .site-nav ul {
