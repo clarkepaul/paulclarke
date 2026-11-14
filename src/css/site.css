@@ -392,12 +392,6 @@ main > .section:last-child {
 	display: none;
 }
 
-@media (min-width: 768px) {
-	.site-header__end {
-		gap: var(--space-l);
-	}
-}
-
 /* Mono label: section titles, dates, breadcrumbs */
 .label,
 .section h2:not(.card__title) {
