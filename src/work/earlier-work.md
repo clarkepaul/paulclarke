@@ -17,6 +17,7 @@ At Silverstripe I led design on websites for New Zealand government and public s
 - Health Quality & Safety Commission
 - Victims Information
 - Electricity Authority
+- Ako Panuku, for the Ministry of Education
 - New Zealand Government Common Web Platform and its base theme
 - Momentum sub-sites: Venator and RPM
 
