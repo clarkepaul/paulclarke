@@ -13,7 +13,7 @@ By 2022 Totara's research space held more than 500 pages of partner meetings, cu
 
 ## My role
 
-As Head of Design, I owned the research directory and led research operations. I restructured the space in October 2022 with two researchers, and maintained it until {{ site.totaraEnd }} as product managers across R&D took over most of the contributions.
+As Head of Design, I owned the research directory and led research operations. I restructured the space in October 2022 with two researchers, and maintained it as product managers across R&D took over most of the contributions.
 
 ## The problem
 
