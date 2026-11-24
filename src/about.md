@@ -8,7 +8,7 @@ description: Fifteen years leading design teams at Silverstripe and Totara, and 
 
 # About
 
-I lead design across [Totara](https://www.totara.com/)'s learning platform. My work spans UX strategy, design systems, accessibility and the tooling that connects design to code. Most recently I have been moving our design practice to an AI-first way of working.
+Until {{ site.totaraEnd }}, I led design across [Totara](https://www.totara.com/)'s learning platform. My work spanned UX strategy, design systems, accessibility and the tooling that connects design to code, and most recently I moved Totara's design practice to an AI-first way of working. I'm now looking for my next design leadership role, and would love to [hear about it](/contact.html).
 
 Before Totara, I spent more than ten years at [Silverstripe](https://www.silverstripe.com/). There I led a small UX team responsible for the experience and design of the open-source [Silverstripe CMS](https://www.silverstripe.org/) and [Silverstripe Cloud](https://www.silverstripe.com/cloud-hosting/), the company's hosting and deployment service.
 

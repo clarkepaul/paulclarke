@@ -13,7 +13,7 @@ A small design team supports a large learning platform, a new multi-product plat
 
 ## My role
 
-I lead the transition from the legacy design system to the new one, and I look at how AI can change the way the design team works. I also run the shared AI design system tooling used by design and development across the organisation.
+I led the transition from the legacy design system to the new one, and looked at how AI could change the way the design team works. I also ran the shared AI design system tooling used by design and development across the organisation.
 
 ## The problem
 
