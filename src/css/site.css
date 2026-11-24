@@ -272,10 +272,19 @@ main > .section:last-child {
 }
 
 .site-header__name {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
 	color: var(--color-ink);
 	font-size: var(--text-label);
 	line-height: 1;
 	text-decoration: none;
+}
+
+.site-header__mark {
+	width: 1.2em; /* the artwork has space around it, so the mark itself is about the height of the name */
+	height: 1.2em;
+	fill: currentColor;
 }
 
 .site-nav ul {
@@ -381,12 +390,6 @@ main > .section:last-child {
 .theme-toggle[aria-pressed="true"] .icon--moon,
 .theme-toggle[aria-pressed="false"] .icon--sun {
 	display: none;
-}
-
-@media (min-width: 768px) {
-	.site-header__end {
-		gap: var(--space-l);
-	}
 }
 
 /* Mono label: section titles, dates, breadcrumbs */
