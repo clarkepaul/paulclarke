@@ -49,7 +49,7 @@ Guidance for Claude when working on paulclarke.nz, Paul Clarke's portfolio, rés
 
 ## Open items
 
-- **Leaving Totara.** The `next-role` branch moves Totara references into the past tense and adds a line inviting contact about Paul's next role. Before merging: set `totaraEnd` in `src/_data/site.json` (currently the placeholder "MONTH 2026"), run `npm run cv`, and commit the PDF. Keep "Head of Design" and "I lead" in the homepage hero.
+- **Leaving Totara.** Paul's official end date is January 2027 (gardening leave from late November 2026). `totaraEnd` in `src/_data/site.json` holds it and is used only on the Résumé and CV. The homepage and About page say "Until recently" so nothing reads as future-dated. Keep "Head of Design" and "I lead" in the homepage hero.
 - **Clearance.** The product health, research repository and design maturity labels case studies describe internal processes. Paul is confirming with Totara that they can be published.
 - **Claims to confirm.** The design maturity labels outcomes ("reviews converged faster", "contentious calls reached me early") are not yet backed by measures. The AI-first practice reflection is marked as a draft in the source.
 - **Earlier work details.** "Momentum sub-sites: Venator and RPM" needs a few words of context, and "JBSL" may need the company's full name.
