@@ -18,6 +18,8 @@ I also worked on the agency side of the business, mostly for public sector clien
 
 I started out designing magazines, branding and marketing material, then moved into websites and digital products, including building their front ends. That range still shapes how I work: I care about the craft at every level, from type and layout to the code that ships it.
 
+I have also spent many years working in hospitality, and turned my hand to a wide range of other jobs: cabinet making and many other trades, snowboard instructing, and building snowboard and ski parks. What they had in common was creating experiences for people, whether that meant looking after guests, teaching someone to ride or shaping a park for the season. I still bring that to design: I think about the whole experience people have, not only what is on the screen.
+
 Some of my earlier writing and talks on design are collected on [my blog page](/blog.html).
 
 ## Outside work
