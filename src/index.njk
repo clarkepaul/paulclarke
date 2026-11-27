@@ -2,12 +2,13 @@
 layout: layouts/base.njk
 permalink: /index.html
 title: Paul Clarke — Head of Design
-description: Head of Design who leads teams and builds the design systems that let product design scale.
+description: Head of Design with a multidisciplinary background in brand, experience, strategy and design systems.
 bodyClass: home
 ---
 <section class="hero">
 	<div class="hero__text">
-		<h1>Head of Design.<br>I <em class="hero__mark">lead</em> design teams and build the <em class="hero__mark">systems</em> that let product design <em class="hero__mark">scale</em>.</h1>
+		<p class="label hero__role">Head of Design</p>
+		<h1>I combine strategic thinking and creative expertise to shape <em class="hero__mark">experiences</em> and <em class="hero__mark">brands</em>. I lead design teams and build systems that <em class="hero__mark">scale</em>.</h1>
 	</div>
 	<div class="hero__image">
 		<img src="/images/paul-clarke.jpg" width="667" height="1000" alt="Paul Clarke, smiling, in a dark green T-shirt against a pale sage background">
@@ -16,7 +17,8 @@ bodyClass: home
 
 <section class="section">
 	<div class="section__inner">
-		<p>Until recently, I led design across <a href="https://www.totara.com/">Totara</a>'s learning platform. My work spanned UX strategy, design systems, accessibility and the tooling that connects design to code. I moved Totara's design practice to an AI-first way of working.</p>
+		<p>I'm a multidisciplinary designer and design leader. Over the years my work has ranged from brand, print and marketing to websites, products and services, and from user research to product strategy.</p>
+		<p>Until recently, I led design across <a href="https://www.totara.com/">Totara</a>'s learning platform, covering UX strategy, design systems, accessibility and the tooling that connects design to code. I also moved Totara's design practice to an AI-first way of working.</p>
 		<p>I'm now looking for my next design leadership role, and would love to <a href="/contact.html">hear from you</a>.</p>
 		<p>Before Totara, I spent more than ten years at <a href="https://www.silverstripe.com/">Silverstripe</a>, leading UX for the open-source CMS and Silverstripe Cloud, and helping build the all-of-government Common Web Platform.</p>
 	</div>
@@ -24,19 +26,17 @@ bodyClass: home
 
 <section class="section">
 	<div class="section__inner">
-		<h2>Highlights</h2>
-		<div class="highlight">
-			<h3>One token system across old and new products</h3>
-			<p>All core components in the new framework draw from a single token contract, and 43% of the legacy library already connects to it. <a href="/case-study-token-system.html">Read the token system case study</a></p>
-		</div>
-		<div class="highlight">
-			<h3>AI that measures, not only generates</h3>
-			<p>My team combined AI-assisted analysis with design review to map all 471 legacy variables and turn the gaps into a check the build enforces. <a href="/case-study-ai-first-practice.html">Read the AI-first practice case study</a></p>
-		</div>
-		<div class="highlight">
-			<h3>A health model that shows where to invest</h3>
-			<p>I gave a mature enterprise platform 25 owned capability areas, each scored on health and strategic importance, with a monthly AI review of customer requests that area owners approve. <a href="/case-study-product-health-model.html">Read the product health case study</a></p>
-		</div>
+		<h2>Focus areas</h2>
+		<ul class="focus-tiles" role="list">
+			{%- for area in focusAreas %}
+			<li class="focus-tile">
+				<span class="focus-tile__icon">{% icon area.icon %}</span>
+				<h3 class="focus-tile__title"><a href="/work.html?focus={{ area.key }}">{{ area.label }}</a></h3>
+				<p>{{ area.text }}</p>
+				<p class="focus-tile__more" aria-hidden="true">See {{ area.label | lower }} <span class="nowrap">work {% icon "arrow-right" %}</span></p>
+			</li>
+			{%- endfor %}
+		</ul>
 		<p><a href="/work.html">See all case studies</a></p>
 	</div>
 </section>

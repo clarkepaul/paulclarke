@@ -1,5 +1,6 @@
 ---
 order: 3
+focus: [systems, strategy]
 permalink: /case-study-ai-first-practice.html
 heading: Moving a design practice to AI-first
 title: Moving a design practice to AI-first — Paul Clarke

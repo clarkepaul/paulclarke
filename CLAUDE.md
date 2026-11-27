@@ -6,7 +6,7 @@ Guidance for Claude when working on paulclarke.nz, Paul Clarke's portfolio, rés
 
 - One repository holds the portfolio and the résumé. The Résumé page (`src/resume.njk`, styled by `src/css/resume.css`) is the source of the downloadable CV, `src/Paul-Clarke-CV.pdf`.
 - Eleventy 3 static site. Source in `src/`, output in `_site/`. Pushing to `main` deploys to GitHub Pages through `.github/workflows/deploy.yml`. The custom domain is set by `CNAME`.
-- Purpose: support applications for Head of Design and design systems leadership roles.
+- Purpose: support applications for Head of Design and design leadership roles. The site presents Paul as multidisciplinary (brand, experience, strategy and systems), not only as a design systems specialist. Tailor detail for a specific job in the cover letter rather than reshaping the site around one role.
 
 ## How Paul likes to work
 
@@ -30,6 +30,8 @@ Guidance for Claude when working on paulclarke.nz, Paul Clarke's portfolio, rés
 - Colour, type, space and layout are design tokens at the top of `src/css/site.css`. Dark mode values sit in two matching blocks (system setting and the header toggle); keep them in step. Printing always uses light colours.
 - Accessibility target is WCAG 2.2 AA: check text contrast, keep visible focus styles, use real headings, lists and tables, and give decorative SVG `aria-hidden`.
 - Content columns are centred: 8 of 12 columns from tablet up, and a narrower reading measure (`--measure`) for prose pages and case studies. The homepage hero heading is deliberately left aligned to the hero grid, not the centred column.
+- Homepage hero: a "Head of Design" label in the mono label style above the heading, then "I combine strategic thinking and creative expertise to shape experiences and brands. I lead design teams and build systems that scale." Highlighter marks sit on experiences, brands and scale. A pill caption on the photo was tried and rejected.
+- Focus areas: Brand, Experience, Strategy and Systems, defined in `src/_data/focusAreas.json` (label, Lucide icon, one-line text). They drive the homepage tiles and the Work page filters, and each tile links to `/work.html?focus=<key>`. Choose icons that are symmetrical and fill their space; compass and blocks were swapped out because they looked small or off centre.
 - Navigation marks hover and the current page with a short line in the highlight colour that grows from the left; the current page label is also darker, so colour is not the only signal.
 - The Paul Clarke mark is in `src/_includes/partials/mark.njk` (header, drawn in the text colour) and `src/favicons/`. The artwork includes deliberate space around it and sits slightly low so it looks centred. Regenerate the PNG and ICO favicons from `src/favicons/favicon.svg` if the mark changes.
 - The email address must never appear as plain text in the HTML. `src/js/email.js` builds it in the browser from `data-email` elements, with "[at] [dot]" text as the fallback.
@@ -37,6 +39,7 @@ Guidance for Claude when working on paulclarke.nz, Paul Clarke's portfolio, rés
 ## Case studies
 
 - Each case study is a file in `src/work/`, ordered by its `order` value. They appear on the Work page and in the "Read next" chain automatically. Start from `case-study-template.md`.
+- Each case study sets `focus` in its front matter to one or more focus area keys, which become its tags and filters on the Work page (`src/js/work-filter.js`).
 - Standard sections: Context, My role, The problem, Key decisions (or what was built), Outcome, Reflection.
 - Markdown works for most. Use a `.njk` file when the layout needs components, as `design-maturity-labels.njk` does.
 - Components available in `site.css`: the `stackedBar` shortcode (chart), `.maturity` label chip with a five-step meter, `.stage-list` (sequence joined by a line), `.term-list` (terms and meanings), `.example` (framed illustration with a caption) and `.data-table` inside `.table-scroll`.
@@ -50,6 +53,9 @@ Guidance for Claude when working on paulclarke.nz, Paul Clarke's portfolio, rés
 ## Open items
 
 - **Leaving Totara.** Paul's official end date is January 2027 (gardening leave from late November 2026). `totaraEnd` in `src/_data/site.json` holds it and is used only on the Résumé and CV. The homepage and About page say "Until recently" so nothing reads as future-dated. Keep "Head of Design" and "I lead" in the homepage hero.
+- **Brand case study.** Brand has only Earlier work under it. A Silverstripe Cloud case study (product and rebrand) would strengthen Brand and Experience; it needs Paul's facts and images.
+- **Résumé and CV framing.** They still lead with design systems. Consider adding Brand to the focus areas and broadening the opening line to match the homepage, then rebuild the PDF.
+- **About page.** The hospitality and trades paragraph uses Paul's own list; "looking after guests" and "shaping a park for the season" are paraphrases to confirm.
 - **Clearance.** The product health, research repository and design maturity labels case studies describe internal processes. Paul is confirming with Totara that they can be published.
 - **Claims to confirm.** The design maturity labels outcomes ("reviews converged faster", "contentious calls reached me early") are not yet backed by measures. The AI-first practice reflection is marked as a draft in the source.
 - **Earlier work details.** "Momentum sub-sites: Venator and RPM" needs a few words of context, and "JBSL" may need the company's full name.

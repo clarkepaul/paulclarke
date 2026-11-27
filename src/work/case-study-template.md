@@ -4,6 +4,7 @@
 permalink: false
 eleventyExcludeFromCollections: true
 order: 99
+focus: [strategy] # one or more of: brand, experience, strategy, systems (see src/_data/focusAreas.json)
 heading: "[Case study title]"
 title: "[Case study title] — Paul Clarke"
 description: "[One-sentence summary for search results.]"

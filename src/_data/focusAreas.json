@@ -1,0 +1,26 @@
+[
+	{
+		"key": "brand",
+		"label": "Brand",
+		"icon": "palette",
+		"text": "Identity, print and marketing, from brand creation and publication design to the Silverstripe Cloud rebrand."
+	},
+	{
+		"key": "experience",
+		"label": "Experience",
+		"icon": "route",
+		"text": "End-to-end journeys shaped with the people who use them, including Inspire, a new default experience for Totara's learning platform."
+	},
+	{
+		"key": "strategy",
+		"label": "Strategy",
+		"icon": "signpost",
+		"text": "Turning what customers say into where to invest, with a product health model and a research directory the roadmap draws on."
+	},
+	{
+		"key": "systems",
+		"label": "Systems",
+		"icon": "layers",
+		"text": "Design systems, design tokens and AI-assisted tooling that let a small team support an enterprise platform."
+	}
+]

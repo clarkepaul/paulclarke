@@ -1,5 +1,6 @@
 ---
 order: 4
+focus: [strategy]
 permalink: /case-study-product-health-model.html
 heading: Making a 25-area product legible enough to fund
 title: Making a 25-area product legible enough to fund — Paul Clarke

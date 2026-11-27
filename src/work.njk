@@ -3,13 +3,22 @@ layout: layouts/base.njk
 permalink: /work.html
 navKey: work
 title: Work — Paul Clarke
-description: Case studies in design systems, design tokens, product strategy, research operations and AI-first design practice.
+description: Case studies in brand, end-to-end experience, product strategy and design systems.
 ---
 <section class="section">
 	<div class="section__inner">
 		<h1>Work</h1>
-		<p>Case studies in design systems, design tokens, product strategy, research operations and AI-first design practice.</p>
+		<p>My work has ranged from brand, print and marketing to websites, products and services, and from user research to product strategy. These case studies are grouped into four focus areas, so you can see one at a time or all of them together.</p>
+		{#- The filter buttons stay hidden until js/work-filter.js runs, so without JavaScript every case study simply shows. -#}
+		<div class="filters" role="group" aria-label="Filter case studies by focus area" hidden>
+			<button type="button" class="filters__button" data-filter="all" aria-pressed="true">All</button>
+			{%- for area in focusAreas %}
+			<button type="button" class="filters__button" data-filter="{{ area.key }}" aria-pressed="false">{% icon area.icon %}{{ area.label }}</button>
+			{%- endfor %}
+		</div>
+		<p class="visually-hidden" role="status" data-filter-status></p>
 		{%- set cardHeading = "h2" %}
 		{% include "partials/work-cards.njk" %}
 	</div>
 </section>
+<script src="/js/work-filter.js"></script>

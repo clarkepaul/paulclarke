@@ -1,5 +1,6 @@
 ---
 order: 1
+focus: [experience, strategy]
 permalink: /case-study-inspire.html
 heading: Modernising an enterprise learning platform between two major releases
 title: Modernising an enterprise learning platform between two major releases — Paul Clarke

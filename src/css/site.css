@@ -439,8 +439,19 @@ main > .section:last-child {
 	padding-inline: 0.06em;
 }
 
+.hero__image {
+	position: relative;
+	align-self: start;
+}
+
 .hero__image img {
+	display: block;
 	border-radius: 12px;
+}
+
+/* Role label above the hero heading */
+.hero__role {
+	margin: 0 0 var(--space-s);
 }
 
 @media (min-width: 768px) {
@@ -484,6 +495,184 @@ main > .section:last-child {
 .card__title,
 .highlight h3 {
 	margin: 0 0 var(--space-xs);
+}
+
+/* Lists of cards and tiles: no bullets */
+.cards,
+.focus-tiles,
+.tags {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Their items set their own spacing, so drop the space between list items */
+.cards > li + li,
+.focus-tiles > li + li,
+.tags > li + li {
+	margin-top: 0;
+}
+
+/* Focus area tags on a case study card */
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-xs);
+	margin-top: var(--space-xs);
+}
+
+.tags li {
+	padding: 0.1rem 0.6rem;
+	border: 1px solid var(--color-muted);
+	border-radius: 999px;
+	color: var(--color-muted);
+	font-family: var(--font-mono);
+	font-size: var(--text-small);
+}
+
+/* Work page filters: a row of toggle buttons; the pressed one is filled */
+.filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-xs);
+	margin: var(--space-m) 0 var(--space-l);
+}
+
+.filters[hidden] {
+	display: none;
+}
+
+.filters__button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	min-height: 44px;
+	padding: 0.4rem 1rem;
+	border: 1px solid var(--color-ink);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--color-ink);
+	font: inherit;
+	cursor: pointer;
+}
+
+.filters__button:hover {
+	background: var(--color-mark);
+}
+
+.filters__button[aria-pressed="true"] {
+	background: var(--color-ink);
+	color: var(--color-page);
+}
+
+.filters__button:focus-visible {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+}
+
+/* Homepage focus area tiles: two by two from tablet up; the whole tile is the link */
+.focus-tiles {
+	display: grid;
+	gap: var(--space-s);
+	margin-bottom: var(--space-m);
+}
+
+@media (min-width: 768px) {
+	.focus-tiles {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.focus-tile {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: var(--space-m);
+	border: 1px solid transparent;
+	border-radius: 12px;
+	background: var(--color-surface);
+	transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.focus-tile:hover {
+	border-color: var(--color-highlight);
+	transform: translateY(-3px);
+}
+
+.focus-tile:focus-within {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+}
+
+.focus-tile__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	margin-bottom: var(--space-s);
+	border-radius: 50%;
+	background: var(--color-mark);
+	color: var(--color-ink);
+}
+
+.focus-tile__icon .icon {
+	width: 1.4rem;
+	height: 1.4rem;
+	vertical-align: 0;
+}
+
+.focus-tile__title {
+	margin: 0 0 var(--space-xs);
+	font-family: var(--font-display);
+	font-weight: 500;
+}
+
+.focus-tile__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.focus-tile__title a:focus-visible {
+	outline: none;
+}
+
+/* Stretch the heading link over the whole tile */
+.focus-tile__title a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 12px;
+}
+
+.focus-tile__more {
+	margin: auto 0 0;
+	padding-top: var(--space-xs);
+	font-weight: 500;
+}
+
+.focus-tile__more .nowrap {
+	white-space: nowrap;
+}
+
+.focus-tile__more .icon {
+	transition: transform 0.2s ease;
+}
+
+.focus-tile:hover .focus-tile__more .icon {
+	transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.focus-tile,
+	.focus-tile__more .icon {
+		transition: none;
+	}
+
+	.focus-tile:hover,
+	.focus-tile:hover .focus-tile__more .icon {
+		transform: none;
+	}
 }
 
 /* Case study */
