@@ -439,8 +439,19 @@ main > .section:last-child {
 	padding-inline: 0.06em;
 }
 
+.hero__image {
+	position: relative;
+	align-self: start;
+}
+
 .hero__image img {
+	display: block;
 	border-radius: 12px;
+}
+
+/* Role label above the hero heading */
+.hero__role {
+	margin: 0 0 var(--space-s);
 }
 
 @media (min-width: 768px) {
@@ -486,17 +497,6 @@ main > .section:last-child {
 	margin: 0 0 var(--space-xs);
 }
 
-/* Case study */
-.case-study .section__inner > h2 {
-	margin-top: var(--space-l);
-}
-
-/* Chart: a single stacked bar with a text legend */
-.chart {
-	margin: var(--space-m) 0;
-}
-
-.chart__bar {
 /* Lists of cards and tiles: no bullets */
 .cards,
 .focus-tiles,
@@ -675,6 +675,17 @@ main > .section:last-child {
 	}
 }
 
+/* Case study */
+.case-study .section__inner > h2 {
+	margin-top: var(--space-l);
+}
+
+/* Chart: a single stacked bar with a text legend */
+.chart {
+	margin: var(--space-m) 0;
+}
+
+.chart__bar {
 	display: block;
 	width: 100%;
 	height: auto;
