@@ -24,19 +24,17 @@ bodyClass: home
 
 <section class="section">
 	<div class="section__inner">
-		<h2>Highlights</h2>
-		<div class="highlight">
-			<h3>One token system across old and new products</h3>
-			<p>All core components in the new framework draw from a single token contract, and 43% of the legacy library already connects to it. <a href="/case-study-token-system.html">Read the token system case study</a></p>
-		</div>
-		<div class="highlight">
-			<h3>AI that measures, not only generates</h3>
-			<p>My team combined AI-assisted analysis with design review to map all 471 legacy variables and turn the gaps into a check the build enforces. <a href="/case-study-ai-first-practice.html">Read the AI-first practice case study</a></p>
-		</div>
-		<div class="highlight">
-			<h3>A health model that shows where to invest</h3>
-			<p>I gave a mature enterprise platform 25 owned capability areas, each scored on health and strategic importance, with a monthly AI review of customer requests that area owners approve. <a href="/case-study-product-health-model.html">Read the product health case study</a></p>
-		</div>
+		<h2>Focus areas</h2>
+		<ul class="focus-tiles" role="list">
+			{%- for area in focusAreas %}
+			<li class="focus-tile">
+				<span class="focus-tile__icon">{% icon area.icon %}</span>
+				<h3 class="focus-tile__title"><a href="/work.html?focus={{ area.key }}">{{ area.label }}</a></h3>
+				<p>{{ area.text }}</p>
+				<p class="focus-tile__more" aria-hidden="true">See {{ area.label | lower }} <span class="nowrap">work {% icon "arrow-right" %}</span></p>
+			</li>
+			{%- endfor %}
+		</ul>
 		<p><a href="/work.html">See all case studies</a></p>
 	</div>
 </section>

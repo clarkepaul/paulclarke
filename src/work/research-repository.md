@@ -1,5 +1,6 @@
 ---
 order: 5
+focus: [experience, strategy]
 permalink: /case-study-research-repository.html
 heading: Turning six years of customer conversations into a source the roadmap relies on
 title: Turning six years of customer conversations into a source the roadmap relies on — Paul Clarke

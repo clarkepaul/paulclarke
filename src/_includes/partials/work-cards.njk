@@ -1,7 +1,17 @@
-{#- Lists every case study. Set `cardHeading` to h2 or h3 to fit the page's heading levels. -#}
+{#- Lists every case study, each tagged with its focus areas (src/_data/focusAreas.json).
+    Set `cardHeading` to h2 or h3 to fit the page's heading levels. js/work-filter.js filters the list by data-focus. -#}
+<ul class="cards" role="list">
 {%- for study in collections.caseStudies %}
-<div class="card">
-	<{{ cardHeading }} class="card__title"><a href="{{ study.url }}">{{ study.data.heading }}</a></{{ cardHeading }}>
-	<p>{{ study.data.summary }}</p>
-</div>
+	<li class="card" data-focus="{{ study.data.focus | join(' ') }}">
+		<{{ cardHeading }} class="card__title"><a href="{{ study.url }}">{{ study.data.heading }}</a></{{ cardHeading }}>
+		<p>{{ study.data.summary }}</p>
+		{%- if study.data.focus %}
+		<ul class="tags" aria-label="Focus areas">
+			{%- for area in focusAreas %}{% if area.key in study.data.focus %}
+			<li>{{ area.label }}</li>
+			{%- endif %}{% endfor %}
+		</ul>
+		{%- endif %}
+	</li>
 {%- endfor %}
+</ul>

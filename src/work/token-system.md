@@ -1,5 +1,6 @@
 ---
 order: 2
+focus: [systems]
 permalink: /case-study-token-system.html
 heading: One token system for a legacy LMS and a new app-based framework
 title: One token system for a legacy LMS and a new app-based framework — Paul Clarke
