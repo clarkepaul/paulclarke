@@ -845,6 +845,32 @@ main > .section:last-child {
 	margin-bottom: 0;
 }
 
+/* Logos keep their own colours, so they always sit on white, in dark mode too */
+.example__frame--logo {
+	display: flex;
+	justify-content: center;
+	padding: var(--space-l) var(--space-m);
+	border-color: transparent;
+	background: #ffffff;
+}
+
+.example__frame--logo img {
+	width: auto;
+	max-width: 100%;
+	max-height: 10rem;
+}
+
+/* Detailed artwork, such as a construction sheet, uses the full width */
+.example__frame--sheet {
+	padding: var(--space-m);
+}
+
+.example__frame--sheet img {
+	width: 100%;
+	max-height: 28rem;
+	object-fit: contain;
+}
+
 .example__frame--mono {
 	font-family: var(--font-mono);
 	font-size: var(--text-small);
