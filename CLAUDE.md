@@ -42,24 +42,29 @@ Guidance for Claude when working on paulclarke.nz, Paul Clarke's portfolio, rés
 - Each case study sets `focus` in its front matter to one or more focus area keys, which become its tags and filters on the Work page (`src/js/work-filter.js`).
 - Standard sections: Context, My role, The problem, Key decisions (or what was built), Outcome, Reflection.
 - Markdown works for most. Use a `.njk` file when the layout needs components, as `design-maturity-labels.njk` does.
-- Components available in `site.css`: the `stackedBar` shortcode (chart), `.maturity` label chip with a five-step meter, `.stage-list` (sequence joined by a line), `.term-list` (terms and meanings), `.example` (framed illustration with a caption) and `.data-table` inside `.table-scroll`.
-- `earlier-work.md` is the last Work entry: earlier websites listed by name without links, because the live sites have since been redesigned.
+- Components available in `site.css`: the `stackedBar` shortcode (chart), `.maturity` label chip with a five-step meter, `.stage-list` (sequence joined by a line), `.term-list` (terms and meanings), `.example` (framed illustration with a caption) and `.data-table` inside `.table-scroll`. Add `.example__frame--logo` for a logo on a white background, centred, in both light and dark mode, and `.example__frame--sheet` as well for detailed artwork or screenshots that should use the full width.
+- `earlier-work.md` is the last Work entry: earlier brand, print and website work listed by name without links, because the live sites have since been redesigned. Its Brand and print list links to the Silverstripe brand case study.
+- Two Silverstripe case studies, written from Paul's own account:
+  - `silverstripe-brand.md` (Brand and Experience): the company brand's versions and the product family built from one glyph. Images are in `src/images/silverstripe/`, extracted from Paul's Illustrator and PDF files. The logo history image is spaced so the gaps above, between and below the logos are equal.
+  - `silverstripe-cms-research.md` (Experience and Systems): the 2014 usability study, the interface changes, and Paul's solo front-end rebuild on Bootstrap. Images are in `src/images/silverstripe-cms/`. The report cover is left out because it names colleagues. The screenshots are of the current CMS, captioned "today", because Paul says the interface has barely changed since he left.
+- Credit collaborators by role ("another designer", "two designers in my team"), not by name, unless Paul asks otherwise.
+- This Mac can read WebP but not write it. Save edited images as PNG (logos) or JPEG (screenshots).
 
 ## The CV
 
-- The printed CV must fit one A4 page. After changing the Résumé page or `resume.css`, run `npm run cv`, check the page count, and commit the PDF with the change.
+- The printed CV is two A4 pages; Paul chose this over cutting Experience detail to fit one. After changing the Résumé page or `resume.css`, run `npm run cv`, check that it stays at two pages and that the break falls between roles or sub-roles (the print styles keep roles, sub-roles and points whole), and commit the PDF with the change.
+- The Résumé opens with Paul's profile and lists Strengths in the sidebar, rather than a second set of focus areas. The About page's "What I do" section groups his capabilities under the site's four focus areas plus Design leadership.
 - Keep a phone number off the public site.
 
 ## Open items
 
 - **Leaving Totara.** Paul's official end date is January 2027 (gardening leave from late November 2026). `totaraEnd` in `src/_data/site.json` holds it and is used only on the Résumé and CV. The homepage and About page say "Until recently" so nothing reads as future-dated. Keep "Head of Design" and "I lead" in the homepage hero.
-- **Brand case study.** Brand has only Earlier work under it. A Silverstripe Cloud case study (product and rebrand) would strengthen Brand and Experience; it needs Paul's facts and images.
-- **Résumé and CV framing.** They still lead with design systems. Consider adding Brand to the focus areas and broadening the opening line to match the homepage, then rebuild the PDF.
+- **Brand work.** The Silverstripe brand case study is live. Paul will add more brand work over time, and plans a motion graphic of the brand creation process and cleaner process sheets from Figma to replace the current construction image. The company logo version Paul designed alone, between the second and current versions, is not shown because there is no artwork for it yet.
 - **About page.** The hospitality and trades paragraph uses Paul's own list; "looking after guests" and "shaping a park for the season" are paraphrases to confirm.
 - **Clearance.** The product health, research repository and design maturity labels case studies describe internal processes. Paul is confirming with Totara that they can be published.
 - **Claims to confirm.** The design maturity labels outcomes ("reviews converged faster", "contentious calls reached me early") are not yet backed by measures. The AI-first practice reflection is marked as a draft in the source.
 - **Earlier work details.** "Momentum sub-sites: Venator and RPM" needs a few words of context, and "JBSL" may need the company's full name.
-- **Design maturity labels page.** Two open choices: give the label chips the colours used in the real labels, and stack the readiness table into cards on phones instead of scrolling it sideways.
+- **Design maturity labels page.** Paul's images of the real labels are not needed; the chips and meters already explain them. Open choices: give the chips the real labels' colours (teal, blue, orange, grey), and stack the readiness table into cards on phones instead of scrolling it sideways. Paul's label images say "Future" where the page says "Discovery"; check which is right.
 
 ## Local preview in the Claude desktop app
 
