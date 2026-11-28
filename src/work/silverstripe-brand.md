@@ -35,7 +35,7 @@ The Silverstripe mark has always been an S drawn from two linked strokes. Each v
 <figure class="example">
 	<figcaption>The Silverstripe brand from 2004 to 2021: the original, the second version and the current version. The version I designed between the second and current ones is not shown.</figcaption>
 	<div class="example__frame example__frame--logo example__frame--sheet">
-		<img src="/images/silverstripe/evolution.png" width="290" height="385" alt="Three Silverstripe logos from oldest to newest: a lower-case silverstripe wordmark with a light blue mark, a SilverStripe wordmark in grey with a dark blue mark, and the current bold Silverstripe wordmark with a bright blue mark">
+		<img src="/images/silverstripe/evolution.png" width="290" height="486" alt="Three Silverstripe logos from oldest to newest: a lower-case silverstripe wordmark with a light blue mark, a SilverStripe wordmark in grey with a dark blue mark, and the current bold Silverstripe wordmark with a bright blue mark">
 	</div>
 </figure>
 
