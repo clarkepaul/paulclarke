@@ -217,6 +217,69 @@ main > .section:last-child {
 	}
 }
 
+/* A full-width band of the surface colour inside a content column, to break up a long page.
+   The content keeps the column width; the box shadow paints the colour out to the window edges,
+   and the clip path stops it spilling above and below, without making the page scroll sideways. */
+.band {
+	margin-block: var(--space-xl);
+	padding-block: calc(var(--space-l) * 2);
+	background: var(--color-surface);
+	box-shadow: 0 0 0 100vmax var(--color-surface);
+	clip-path: inset(0 -100vmax);
+}
+
+/* More space above each heading than below, so each heading belongs to what follows it */
+.band h3 {
+	margin: var(--space-l) 0 var(--space-s);
+}
+
+.band h3 .icon {
+	margin-right: calc(var(--space-xs) * 1.5);
+	color: var(--color-highlight);
+}
+
+/* Short skills lists run in two columns from tablet width, to keep the band compact */
+.band ul {
+	margin-top: var(--space-s);
+}
+
+.band li + li {
+	margin-top: 0;
+}
+
+.band li {
+	margin-bottom: var(--space-xs);
+	break-inside: avoid;
+}
+
+/* The padding alone sets the space inside the top and bottom edges, so the two match */
+.section .band > :first-child {
+	margin-top: 0;
+}
+
+.band > :last-child {
+	margin-bottom: 0;
+}
+
+.band > :last-child li:last-child {
+	margin-bottom: 0;
+}
+
+@media (min-width: 600px) {
+	.band ul {
+		columns: 2;
+		column-gap: var(--space-l);
+	}
+}
+
+@media print {
+	.band {
+		box-shadow: none;
+		clip-path: none;
+		background: none;
+	}
+}
+
 /* Components
    -------------------------------------------------------------------------- */
 
