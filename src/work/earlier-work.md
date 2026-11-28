@@ -8,11 +8,11 @@ description: Brand and print work, and websites Paul Clarke led design on at Sil
 summary: Brand and print work, and websites I led design on at Silverstripe, mostly for New Zealand government and public sector organisations.
 ---
 
-Alongside product design, my work has ranged from brand creation and print to websites. At Silverstripe I led design on websites for New Zealand government and public sector organisations, and often built their front ends. These sites have since been redesigned, so this is a record of the earlier versions I worked on rather than links to my work.
+Alongside product design, my work has ranged from brand creation and print to websites. At Silverstripe I led design on websites for New Zealand government and public sector organisations, and often built their front ends. For many of these clients, a logo was all the brand they had, so part of designing their website was creating a brand language around it: direction for patterns, and guidance on how to use them. These sites have since been redesigned, so this is a record of the earlier versions I worked on rather than links to my work.
 
 ## Brand and print
 
-- Silverstripe Cloud, the rebrand and its sub-brands
+- [Silverstripe brands](/case-study-silverstripe-brand.html): the company brand and its family of product brands
 - Excel Media Group and HR Magazine Hong Kong: brand creation, a business publication redesign and layout design
 - Blackbox Design: commercial work ranging from print design to building websites
 
@@ -26,11 +26,11 @@ Alongside product design, my work has ranged from brand creation and print to we
 - Electricity Authority
 - Ako Panuku, for the Ministry of Education
 - New Zealand Government Common Web Platform and its base theme
-- Momentum sub-sites: Venator and RPM
 
-## Other organisations
+## Private sector
 
 - JBSL
+- Momentum sub-sites: Venator and RPM
 
 ## Silverstripe
 
