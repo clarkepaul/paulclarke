@@ -86,6 +86,6 @@ I build design capability: leading and supporting teams in their day-to-day work
 
 I love a hands-on creative project. I am fitting out a bus as a motorhome for our family, and we share the build and our travels on [dustyandthesardines.nz](https://dustyandthesardines.nz). The bus and my motorbike are about the same age as me, so you could say I have a thing for retro things.
 
-I spend as much time on the water as I can, surfing, kitesurfing or paddleboarding, after nine years following winter seasons to snowboard, mostly in the Austrian Alps. Most of my spare time now goes to family life with my kids, my wife and the dog, exploring New Zealand each summer.
+I spend as much time on the water as I can, surfing, kitesurfing or paddleboarding, after nine years following winter seasons to snowboard, mostly in the Austrian Alps. Most of my spare time now goes to family life with my kids, my wife and the dog. Creating experiences does not stop at work: I put the same energy into making them for the kids, whether that is at home or exploring New Zealand each summer.
 
 {% include "partials/cta.njk" %}
