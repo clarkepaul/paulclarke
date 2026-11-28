@@ -20,7 +20,67 @@ I started out designing magazines, branding and marketing material, then moved i
 
 I have also spent many years working in hospitality, and turned my hand to a wide range of other jobs: cabinet making and many other trades, snowboard instructing, and building snowboard and ski parks. What they had in common was creating experiences for people, whether that meant looking after guests, teaching someone to ride or shaping a park for the season. I still bring that to design: I think about the whole experience people have, not only what is on the screen.
 
-Some of my earlier writing and talks on design are collected on [my blog page](/blog.html).
+{# "What I do" sits in a full-width band (.band in site.css) to break up the page.
+    Areas follow the order and icons in _data/focusAreas.json. #}
+<section class="band" aria-labelledby="what-i-do">
+
+<h2 id="what-i-do">What I do</h2>
+
+I bring research, strategy and design together, and I am at my best connecting the big picture to the practical work. My work falls into four focus areas, the same ones [my case studies](/work.html) are grouped by, and I lead the teams that do it.
+
+### {% icon "palette" %}Brand
+
+I help define what a brand stands for and who it needs to reach, then turn that into an identity people recognise and remember, and guide how it comes to life across communications. [See brand work](/work.html?focus=brand).
+
+- Brand positioning and brand architecture
+- Messaging and content strategy
+- Naming, for brands and interfaces
+- Logo design, typography, colour and visual assets
+- Brand guidelines and creative direction
+- Publications, reports, print and presentations
+
+### {% icon "route" %}Experience
+
+I shape accessible, intuitive websites and digital products around the people who use them, connecting strategy with clear structure, thoughtful interaction and testing. [See experience work](/work.html?focus=experience).
+
+- Digital strategy
+- Website and digital product design
+- Information architecture
+- Interface and interaction design
+- Responsive design
+- User research and usability testing
+- Search engine optimisation and site performance
+
+### {% icon "signpost" %}Strategy
+
+I lead research and discovery to understand people, their needs and their context, and turn what we learn into clear opportunities and evidence-based direction. [See strategy work](/work.html?focus=strategy).
+
+- Research and discovery
+- Research repositories
+- Evidence-based product strategy
+- AI-assisted and automated insight
+
+### {% icon "layers" %}Systems
+
+I build the systems that let a small design team support a large product, so good design happens consistently without every decision going through one person. [See systems work](/work.html?focus=systems).
+
+- Design systems and component libraries
+- Design token architecture
+- Accessibility and WCAG conformance
+- Writing style guides
+- Tooling that connects design to code
+- AI-assisted design practice
+
+### {% icon "users" %}Design leadership
+
+I build design capability: leading and supporting teams in their day-to-day work, giving strategic design advice, and putting in place the practices that let a team do its best work.
+
+- Team leadership and management
+- Creative leadership
+- Strategic design advice
+- Design operations
+
+</section>
 
 ## Outside work
 
