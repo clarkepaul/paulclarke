@@ -272,6 +272,12 @@ main > .section:last-child {
 	}
 }
 
+/* Closing line under the Work page cards */
+.work-more {
+	margin-top: var(--space-l);
+	color: var(--color-muted);
+}
+
 @media print {
 	.band {
 		box-shadow: none;
