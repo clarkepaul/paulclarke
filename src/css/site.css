@@ -404,6 +404,18 @@ main > .section:last-child {
 	width: calc(100% + 0.9em);
 }
 
+/* Phones: the menu wraps under the name, so the line starts at the label's left edge to align with it */
+@media (max-width: 767px) {
+	.site-nav a::before {
+		left: 0;
+	}
+
+	.site-nav a:hover::before,
+	.site-nav a[aria-current="page"]::before {
+		width: 100%;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.site-nav a::before {
 		transition: none;
